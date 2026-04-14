@@ -33,6 +33,24 @@ const supportingProjects = [
       "Set up CI/CD, GitOps, and AWS EKS infrastructure to support end-to-end deployment.",
     ],
   },
+  {
+    title: "Therapy Practice Website",
+    status: "In Progress",
+    summary:
+      "Responsive practice website built with Expo Router and React Native Web, with static content, contact flows, technical SEO, and AWS-backed deployment.",
+    tags: [
+      "Expo Router",
+      "React Native Web",
+      "TypeScript",
+      "AWS",
+      "Terraform",
+    ],
+    highlights: [
+      "Built route-based pages, reusable UI components, responsive navigation, and a cross-platform hero video.",
+      "Implemented contact interactions with email, phone, map links, and clipboard copy behavior.",
+      "Added SEO metadata, robots and sitemap generation, and CI/CD for static hosting on AWS.",
+    ],
+  },
 ];
 
 const experimentalProject = {
@@ -162,11 +180,11 @@ export default function Home() {
               Cloud delivery and application work
             </h3>
 
-            <div className="mt-8 grid gap-6">
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {supportingProjects.map((project) => (
                 <article
                   key={project.title}
-                  className="rounded-md border border-zinc-800 p-6"
+                  className="h-full rounded-md border border-zinc-800 p-6"
                 >
                   <div className="flex flex-wrap items-center gap-3">
                     <h4 className="text-xl font-semibold tracking-tight text-white">
