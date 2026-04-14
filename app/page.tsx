@@ -66,6 +66,24 @@ const experimentalProject = {
   ],
 };
 
+const contactLinks = [
+  {
+    label: "Email",
+    value: "hugohemlin@hotmail.com",
+    href: "mailto:hugohemlin@hotmail.com",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/Luunomx",
+    href: "https://github.com/Luunomx",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/hugo-hemlin",
+    href: "https://linkedin.com/in/hugo-hemlin/",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
@@ -270,6 +288,50 @@ export default function Home() {
                 ))}
               </ul>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="border-t border-zinc-800">
+        <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+            Contact
+          </p>
+
+          <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Open to cloud, full-stack, and product-focused work.
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
+                Most of the work shown here is private, but I can walk through
+                scope, architecture, and technical decisions in more detail on
+                request.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  className="rounded-md border border-zinc-800 px-5 py-4 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
+                  href={link.href}
+                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={
+                    link.href.startsWith("mailto:")
+                      ? undefined
+                      : "noopener noreferrer"
+                  }
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+                    {link.label}
+                  </p>
+                  <p className="mt-2 text-base font-medium text-zinc-100">
+                    {link.value}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
