@@ -1,6 +1,6 @@
 const featuredProject = {
   title: "Transport Booking & Operations Platform",
-  status: "Internal / Private",
+  status: "Private Project",
   summary:
     "Full-stack transport booking app with booking validation, live pricing, order tracking, analytics, and secure integration with an external TMS.",
   description:
@@ -23,7 +23,7 @@ const featuredProject = {
 const supportingProjects = [
   {
     title: "Cloud-Native Bulletin Board App",
-    status: "In Progress",
+    status: "Private Project",
     summary:
       "Full-stack bulletin board built with React, ASP.NET Core, MongoDB, and a deployment path spanning Docker, Helm, GitOps, and AWS EKS.",
     tags: ["React", "ASP.NET Core", "MongoDB", "Kubernetes", "Terraform"],
@@ -35,7 +35,7 @@ const supportingProjects = [
   },
   {
     title: "Therapy Practice Website",
-    status: "In Progress",
+    status: "Private Project",
     summary:
       "Responsive practice website built with Expo Router and React Native Web, with static content, contact flows, technical SEO, and AWS-backed deployment.",
     tags: [
@@ -55,7 +55,7 @@ const supportingProjects = [
 
 const experimentalProject = {
   title: "Experimental Trading Bot Sandbox",
-  status: "Experimental",
+  status: "Private Project",
   summary:
     "Experimental .NET 8 sandbox for backtesting, WebSocket market-data ingestion, rule-based strategy signals, risk gates, and simulated crypto paper execution.",
   tags: ["C#", ".NET 8", "WebSockets", "Backtesting", "Docker"],
