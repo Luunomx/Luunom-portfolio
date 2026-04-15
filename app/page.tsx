@@ -18,10 +18,7 @@ const featuredProject = {
     "Integrated external services for transport logic, pricing, address validation, and operational data exchange.",
     "Worked across application code and AWS delivery workflows with a focus on reliability, data consistency, and clear boundaries.",
   ],
-  actions: [
-    { label: "Details on request", href: "#contact" },
-    { label: "View CV", href: "/cv/Hugo-Hemlin-CV.pdf", external: true },
-  ],
+  actions: [{ label: "Details on request", href: "#contact" }],
 };
 
 const supportingProjects = [
