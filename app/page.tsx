@@ -18,6 +18,10 @@ const featuredProject = {
     "Integrated external services for transport logic, pricing, and operational data handling.",
     "Delivered a system shaped by real operational needs, reliability, and clear service boundaries.",
   ],
+  actions: [
+    { label: "Details on request", href: "#contact" },
+    { label: "View CV", href: "/cv/Cv-eng.pdf", external: true },
+  ],
 };
 
 const supportingProjects = [
@@ -25,13 +29,14 @@ const supportingProjects = [
     title: "Cloud-Native Bulletin Board App",
     status: "Private Project",
     summary:
-      "Full-stack application used to demonstrate containerization, Kubernetes delivery, CI/CD, GitOps, Helm, and AWS or Terraform deployment workflows.",
+      "Full-stack application used to demonstrate containerization, Kubernetes delivery, CI/CD, GitOps, Helm, and AWS plus Terraform-based deployment workflows.",
     tags: ["React", "ASP.NET Core", "MongoDB", "Kubernetes", "Terraform"],
     highlights: [
       "Built and containerized a React and ASP.NET Core application with MongoDB-backed data handling.",
       "Packaged the system for Kubernetes with Helm, ingress routing, and GitOps workflows.",
       "Applied end-to-end cloud delivery practices across CI/CD and AWS infrastructure provisioning.",
     ],
+    actions: [{ label: "Details on request", href: "#contact" }],
   },
   {
     title: "Therapy Practice Website",
@@ -50,6 +55,7 @@ const supportingProjects = [
       "Implemented contact interactions with email, phone, map links, and clipboard copy behavior.",
       "Added SEO metadata, robots and sitemap generation, and CI/CD for static hosting on AWS.",
     ],
+    actions: [{ label: "Details on request", href: "#contact" }],
   },
 ];
 
@@ -64,6 +70,7 @@ const experimentalProject = {
     "Implemented WebSocket ingestion, reconnect handling, health metrics, and runtime reporting.",
     "Used the project to explore reliability patterns for long-running data-driven systems.",
   ],
+  actions: [{ label: "Details on request", href: "#contact" }],
 };
 
 const contactLinks = [
@@ -84,6 +91,30 @@ const contactLinks = [
   },
 ];
 
+type ProjectAction = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+function ProjectActions({ actions }: { actions: ProjectAction[] }) {
+  return (
+    <div className="mt-6 flex flex-wrap gap-3">
+      {actions.map((action) => (
+        <a
+          key={action.label}
+          className="inline-flex h-10 items-center justify-center rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
+          href={action.href}
+          target={action.external ? "_blank" : undefined}
+          rel={action.external ? "noopener noreferrer" : undefined}
+        >
+          {action.label}
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
@@ -101,9 +132,9 @@ export default function Home() {
             applications.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-500 sm:text-lg">
-            I build backend systems, cloud delivery workflows, and
-            product-facing applications with a focus on operational reliability,
-            clean architecture, and real-world use.
+            Backend systems, cloud delivery workflows, and product-facing
+            applications built for reliability, clear architecture, and real
+            operational use.
           </p>
         </div>
 
@@ -139,7 +170,7 @@ export default function Home() {
             Selected Work
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
-            Real systems and supporting work
+            Production systems and supporting work
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-400">
             Real-world systems, cloud delivery, and engineering-focused side
@@ -168,6 +199,8 @@ export default function Home() {
               <p className="mt-6 max-w-3xl text-base leading-8 text-zinc-400">
                 {featuredProject.description}
               </p>
+
+              <ProjectActions actions={featuredProject.actions} />
             </div>
 
             <div className="space-y-8">
@@ -253,6 +286,8 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+
+                  <ProjectActions actions={project.actions} />
                 </article>
               ))}
             </div>
@@ -303,6 +338,8 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+
+              <ProjectActions actions={experimentalProject.actions} />
             </article>
           </div>
         </div>
@@ -320,11 +357,10 @@ export default function Home() {
                 Open to cloud, DevOps, backend, and full-stack roles.
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
-                I’m interested in building backend systems, cloud
-                infrastructure, deployment workflows, and modern applications.
-                Most of the work shown here is private, but I can walk through
-                architecture, tradeoffs, and implementation details in
-                conversation.
+                Available for backend systems, cloud infrastructure, deployment
+                workflows, and modern application work. Most of the projects
+                shown here are private, but I can walk through architecture,
+                tradeoffs, and implementation details in conversation.
               </p>
             </div>
 

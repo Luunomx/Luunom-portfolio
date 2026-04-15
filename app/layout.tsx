@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const title = "Luunom | Cloud Developer Student";
+const title = "Luunom | Cloud, DevOps & Full-Stack Developer";
 const description =
-  "Portfolio of Hugo Hemlin, a cloud developer student building modern web apps, cloud-focused systems, and private full-stack projects.";
+  "Portfolio of Hugo Hemlin, focused on backend systems, cloud infrastructure, DevOps workflows, and modern full-stack applications.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +33,15 @@ export const metadata: Metadata = {
   ],
   creator: "Hugo Hemlin",
   publisher: "Hugo Hemlin",
+  keywords: [
+    "Cloud Developer",
+    "DevOps",
+    "Backend Developer",
+    "Full-Stack Developer",
+    "AWS",
+    "Kubernetes",
+    "Next.js",
+  ],
   alternates: {
     canonical: "/",
   },
@@ -45,7 +54,7 @@ export const metadata: Metadata = {
     description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
   },
