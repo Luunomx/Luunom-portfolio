@@ -2,9 +2,9 @@ const featuredProject = {
   title: "Transport Booking & Operations Platform",
   status: "Private Project",
   summary:
-    "Full-stack transport booking app with booking validation, live pricing, order tracking, analytics, and secure integration with an external TMS.",
+    "Production-grade platform for booking, pricing, validation, order handling, analytics, and integrations.",
   description:
-    "Built as an operational system for authenticated business users, combining booking flows, pricing, order management, calendar views, company statistics, and profile data in one product.",
+    "Built as the operational interface around an existing TMS, giving teams a clearer control layer for day-to-day transport workflows across booking, pricing, validation, order handling, and reporting.",
   tags: [
     "Expo",
     "React Native",
@@ -14,9 +14,9 @@ const featuredProject = {
     "AWS",
   ],
   highlights: [
-    "Built full-stack flows for booking, orders, calendar, statistics, and profile management.",
-    "Implemented backend logic for booking validation, live pricing, order sync, and company-scoped reporting.",
-    "Integrated external TMS, address validation, and shipping-time services into a single workflow.",
+    "Built the application layer on top of an existing TMS for booking, pricing, validation, and order workflows.",
+    "Integrated external services for transport logic, pricing, and operational data handling.",
+    "Delivered a system shaped by real operational needs, reliability, and clear service boundaries.",
   ],
 };
 
@@ -25,12 +25,12 @@ const supportingProjects = [
     title: "Cloud-Native Bulletin Board App",
     status: "Private Project",
     summary:
-      "Full-stack bulletin board built with React, ASP.NET Core, MongoDB, and a deployment path spanning Docker, Helm, GitOps, and AWS EKS.",
+      "Full-stack application used to demonstrate containerization, Kubernetes delivery, CI/CD, GitOps, Helm, and AWS or Terraform deployment workflows.",
     tags: ["React", "ASP.NET Core", "MongoDB", "Kubernetes", "Terraform"],
     highlights: [
-      "Built a React and .NET application with MongoDB-backed post creation and retrieval.",
-      "Containerized frontend and backend services and packaged them for Kubernetes with Helm and nginx routing.",
-      "Set up CI/CD, GitOps, and AWS EKS infrastructure to support end-to-end deployment.",
+      "Built and containerized a React and ASP.NET Core application with MongoDB-backed data handling.",
+      "Packaged the system for Kubernetes with Helm, ingress routing, and GitOps workflows.",
+      "Applied end-to-end cloud delivery practices across CI/CD and AWS infrastructure provisioning.",
     ],
   },
   {
@@ -54,15 +54,15 @@ const supportingProjects = [
 ];
 
 const experimentalProject = {
-  title: "Experimental Trading Bot Sandbox",
+  title: "Rule-Based Data Processing Sandbox",
   status: "Private Project",
   summary:
-    "Experimental .NET 8 sandbox for backtesting, WebSocket market-data ingestion, rule-based strategy signals, risk gates, and simulated crypto paper execution.",
+    ".NET 8 system for market-data ingestion, rule-based processing, backtesting, simulated execution, and runtime monitoring.",
   tags: ["C#", ".NET 8", "WebSockets", "Backtesting", "Docker"],
   highlights: [
-    "Built a bar-based backtesting pipeline with multi-timeframe indicators, risk checks, and CSV or chart-based reporting.",
-    "Implemented futures WebSocket ingestion with auth signing, parsing, reconnect handling, and health metrics.",
-    "Added simulated execution, position tracking, and deployment scaffolding for long-running runtime experiments.",
+    "Built pipelines for bar aggregation, backtesting, and multi-timeframe rule evaluation.",
+    "Implemented WebSocket ingestion, reconnect handling, health metrics, and runtime reporting.",
+    "Used the project to explore reliability patterns for long-running data-driven systems.",
   ],
 };
 
@@ -89,7 +89,7 @@ export default function Home() {
     <main className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-10 lg:px-16">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
-          Portfolio
+          Cloud / DevOps / Full-Stack
         </p>
 
         <div className="mt-6 max-w-3xl">
@@ -97,14 +97,27 @@ export default function Home() {
             Luunom
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-xl">
-            Cloud developer student building modern web apps with a focus on
-            thoughtful UX, reliable architecture, and clean execution.
+            Building reliable systems, cloud infrastructure, and modern
+            applications.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-500 sm:text-lg">
+            I build backend systems, cloud delivery workflows, and
+            product-facing applications with a focus on operational reliability,
+            clean architecture, and real-world use.
           </p>
         </div>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
             className="inline-flex h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-200"
+            href="/cv/Cv-eng.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV
+          </a>
+          <a
+            className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
             href="https://github.com/Luunomx"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,21 +136,21 @@ export default function Home() {
       <section id="projects" className="border-t border-zinc-800">
         <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Projects
+            Selected Work
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
-            Selected work
+            Real systems and supporting work
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-400">
-            Full-stack and cloud-focused projects across internal operations,
-            deployment architecture, and technical experimentation.
+            Real-world systems, cloud delivery, and engineering-focused side
+            work.
           </p>
 
           <div className="mt-14 grid gap-10 border-t border-zinc-800 pt-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.8fr)]">
             <div>
               <div className="flex flex-wrap items-center gap-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                  Featured Project
+                  Featured Platform
                 </p>
                 <span className="rounded-md border border-zinc-700 px-3 py-1 text-xs font-medium text-zinc-300">
                   {featuredProject.status}
@@ -192,11 +205,15 @@ export default function Home() {
 
           <div className="mt-16 border-t border-zinc-800 pt-10">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Supporting Projects
+              Supporting Work
             </p>
             <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">
-              Cloud delivery and application work
+              Cloud delivery and full-stack implementation
             </h3>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-400">
+              Additional projects focused on cloud delivery, infrastructure
+              automation, and practical full-stack implementation.
+            </p>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {supportingProjects.map((project) => (
@@ -243,15 +260,14 @@ export default function Home() {
 
           <div className="mt-16 border-t border-zinc-800 pt-10">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Experimental
+              Algorithmic Systems & Data Processing
             </p>
             <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">
-              Trading systems research
+              Data pipelines, processing, and runtime reliability
             </h3>
             <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-400">
-              Engineering-focused exploration of market-data pipelines,
-              strategy evaluation, and simulated execution rather than a
-              performance claim.
+              Engineering-focused work around data pipelines, rule-based
+              processing, backtesting, and runtime reliability.
             </p>
 
             <article className="mt-8 rounded-md border border-zinc-800 p-6">
@@ -295,18 +311,20 @@ export default function Home() {
       <section id="contact" className="border-t border-zinc-800">
         <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Contact
+            Open to Opportunities
           </p>
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Open to cloud, full-stack, and product-focused work.
+                Open to cloud, DevOps, backend, and full-stack roles.
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
+                I’m interested in building backend systems, cloud
+                infrastructure, deployment workflows, and modern applications.
                 Most of the work shown here is private, but I can walk through
-                scope, architecture, and technical decisions in more detail on
-                request.
+                architecture, tradeoffs, and implementation details in
+                conversation.
               </p>
             </div>
 
