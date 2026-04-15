@@ -2,9 +2,9 @@ const featuredProject = {
   title: "Transport Booking & Operations Platform",
   status: "Private Project",
   summary:
-    "Production-grade platform for booking, pricing, validation, order handling, analytics, and integrations.",
+    "Production-grade logistics platform for booking, pricing, validation, order handling, analytics, and external integrations.",
   description:
-    "Built as the operational interface around an existing TMS, giving teams a clearer control layer for day-to-day transport workflows across booking, pricing, validation, order handling, and reporting.",
+    "Built as the application and control layer on top of an existing TMS, giving operations teams a faster interface for booking flows, pricing decisions, validation, order handling, and reporting.",
   tags: [
     "Expo",
     "React Native",
@@ -14,13 +14,13 @@ const featuredProject = {
     "AWS",
   ],
   highlights: [
-    "Built the application layer on top of an existing TMS for booking, pricing, validation, and order workflows.",
-    "Integrated external services for transport logic, pricing, and operational data handling.",
-    "Delivered a system shaped by real operational needs, reliability, and clear service boundaries.",
+    "Built full-stack product flows and backend services on top of an existing TMS for booking, pricing, validation, and order handling.",
+    "Integrated external services for transport logic, pricing, address validation, and operational data exchange.",
+    "Worked across application code and AWS delivery workflows with a focus on reliability, data consistency, and clear boundaries.",
   ],
   actions: [
     { label: "Details on request", href: "#contact" },
-    { label: "View CV", href: "/cv/Cv-eng.pdf", external: true },
+    { label: "View CV", href: "/cv/Hugo-Hemlin-CV.pdf", external: true },
   ],
 };
 
@@ -150,7 +150,7 @@ export default function Home() {
           </a>
           <a
             className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-            href="/cv/Cv-eng.pdf"
+            href="/cv/Hugo-Hemlin-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
