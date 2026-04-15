@@ -110,6 +110,12 @@ export default function Home() {
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
             className="inline-flex h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-200"
+            href="#projects"
+          >
+            View projects
+          </a>
+          <a
+            className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
             href="/cv/Cv-eng.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,12 +129,6 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             GitHub
-          </a>
-          <a
-            className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-            href="#projects"
-          >
-            View projects
           </a>
         </div>
       </section>
