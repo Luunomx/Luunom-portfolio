@@ -125,8 +125,11 @@ export default function Home() {
 
         <div className="mt-6 max-w-3xl">
           <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            Luunom
+            Hugo Hemlin
           </h1>
+          <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-base">
+            Luunom
+          </p>
           <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-xl">
             Building reliable systems, cloud infrastructure, and modern
             applications.

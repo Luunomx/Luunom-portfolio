@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const title = "Luunom | Cloud, DevOps & Full-Stack Developer";
+const title = "Hugo Hemlin | Luunom";
 const description =
   "Portfolio of Hugo Hemlin, focused on backend systems, cloud infrastructure, DevOps workflows, and modern full-stack applications.";
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: "%s | Luunom",
+    template: "%s | Hugo Hemlin",
   },
   description,
   applicationName: "Luunom Portfolio",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Luunom Portfolio",
+    siteName: "Hugo Hemlin | Luunom Portfolio",
     title,
     description,
   },

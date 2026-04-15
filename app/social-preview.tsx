@@ -1,4 +1,4 @@
-export const socialImageAlt = "Luunom portfolio preview";
+export const socialImageAlt = "Hugo Hemlin and Luunom portfolio preview";
 
 export const socialImageSize = {
   width: 1200,
@@ -64,6 +64,20 @@ export function PortfolioSocialPreview() {
               fontWeight: 700,
               lineHeight: 1,
               color: "#ffffff",
+            }}
+          >
+            Hugo Hemlin
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              marginTop: 18,
+              fontSize: 24,
+              fontWeight: 500,
+              color: "#a1a1aa",
+              letterSpacing: 4,
+              textTransform: "uppercase",
             }}
           >
             Luunom
