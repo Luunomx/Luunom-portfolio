@@ -1,3 +1,5 @@
+import { contactLinks as siteContactLinks, siteDescription, siteName, siteUrl } from "../lib/site";
+
 const featuredProject = {
   title: "Transport Booking & Operations Platform",
   status: "Private Repository",
@@ -74,17 +76,17 @@ const contactLinks = [
   {
     label: "Email",
     value: "hugohemlin@hotmail.com",
-    href: "mailto:hugohemlin@hotmail.com",
+    href: siteContactLinks.email,
   },
   {
     label: "GitHub",
     value: "github.com/Luunomx",
-    href: "https://github.com/Luunomx",
+    href: siteContactLinks.github,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/hugo-hemlin",
-    href: "https://linkedin.com/in/hugo-hemlin/",
+    href: siteContactLinks.linkedin,
   },
 ];
 
@@ -93,6 +95,37 @@ type ProjectAction = {
   href: string;
   external?: boolean;
 };
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Hugo Hemlin",
+    alternateName: "Luunom",
+    url: siteUrl,
+    description: siteDescription,
+    email: siteContactLinks.email,
+    jobTitle: "Cloud, DevOps, Backend, and Full-Stack Developer",
+    sameAs: [siteContactLinks.github, siteContactLinks.linkedin],
+    knowsAbout: [
+      "Cloud infrastructure",
+      "DevOps",
+      "Backend development",
+      "Full-stack development",
+      "AWS",
+      "Kubernetes",
+      "Terraform",
+      ".NET",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: siteUrl,
+    description: siteDescription,
+  },
+];
 
 function ProjectActions({ actions }: { actions: ProjectAction[] }) {
   return (
@@ -114,68 +147,74 @@ function ProjectActions({ actions }: { actions: ProjectAction[] }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
-      <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-10 lg:px-16">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
-          Cloud / DevOps / Full-Stack
-        </p>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-        <div className="mt-6 max-w-3xl">
-          <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            Hugo Hemlin
-          </h1>
-          <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-base">
-            Luunom
+      <main className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
+        <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-10 lg:px-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
+            Cloud / DevOps / Full-Stack
           </p>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-xl">
-            Building reliable systems, cloud infrastructure, and modern
-            applications.
-          </p>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-500 sm:text-lg">
-            Backend systems, cloud delivery workflows, and product-facing
-            applications built for reliability, clear architecture, and real
-            operational use.
-          </p>
-        </div>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            className="inline-flex h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-200"
-            href="#projects"
-          >
-            View projects
-          </a>
-          <a
-            className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-            href="/cv/Hugo-Hemlin-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View CV
-          </a>
-          <a
-            className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-            href="https://github.com/Luunomx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </div>
-      </section>
+          <div className="mt-6 max-w-3xl">
+            <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+              Hugo Hemlin
+            </h1>
+            <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-zinc-500 sm:text-base">
+              Luunom
+            </p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-xl">
+              Building reliable systems, cloud infrastructure, and modern
+              applications.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-500 sm:text-lg">
+              Backend systems, cloud delivery workflows, and product-facing
+              applications built for reliability, clear architecture, and real
+              operational use.
+            </p>
+          </div>
 
-      <section id="projects" className="border-t border-zinc-800">
-        <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Selected Work
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
-            Production systems and supporting work
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-400">
-            Real-world systems, cloud delivery, and engineering-focused side
-            work.
-          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              className="inline-flex h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-200"
+              href="#projects"
+            >
+              View projects
+            </a>
+            <a
+              className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
+              href="/cv/Hugo-Hemlin-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV
+            </a>
+            <a
+              className="inline-flex h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
+              href={siteContactLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </section>
+
+        <section id="projects" className="border-t border-zinc-800">
+          <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Selected Work
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
+              Production systems and supporting work
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-400">
+              Real-world systems, cloud delivery, and engineering-focused side
+              work.
+            </p>
 
           <div className="mt-14 grid gap-10 border-t border-zinc-800 pt-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.8fr)]">
             <div>
@@ -342,53 +381,55 @@ export default function Home() {
               <ProjectActions actions={experimentalProject.actions} />
             </article>
           </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section id="contact" className="border-t border-zinc-800">
-        <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-            Open to Opportunities
-          </p>
+        <section id="contact" className="border-t border-zinc-800">
+          <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Open to Opportunities
+            </p>
 
-          <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Open to cloud, DevOps, backend, and full-stack roles.
-              </h2>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
-                Available for backend systems, cloud infrastructure, deployment
-                workflows, and modern application work. Most of the projects
-                shown here are private, but I can walk through architecture,
-                tradeoffs, and implementation details in conversation.
-              </p>
-            </div>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Open to cloud, DevOps, backend, and full-stack roles.
+                </h2>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
+                  Available for backend systems, cloud infrastructure,
+                  deployment workflows, and modern application work. Most of the
+                  projects shown here are private, but I can walk through
+                  architecture, tradeoffs, and implementation details in
+                  conversation.
+                </p>
+              </div>
 
-            <div className="grid gap-4">
-              {contactLinks.map((link) => (
-                <a
-                  key={link.label}
-                  className="rounded-md border border-zinc-800 px-5 py-4 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
-                  href={link.href}
-                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={
-                    link.href.startsWith("mailto:")
-                      ? undefined
-                      : "noopener noreferrer"
-                  }
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                    {link.label}
-                  </p>
-                  <p className="mt-2 text-base font-medium text-zinc-100">
-                    {link.value}
-                  </p>
-                </a>
-              ))}
+              <div className="grid gap-4">
+                {contactLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    className="rounded-md border border-zinc-800 px-5 py-4 transition-colors hover:border-zinc-600 hover:bg-zinc-900"
+                    href={link.href}
+                    target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={
+                      link.href.startsWith("mailto:")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
+                      {link.label}
+                    </p>
+                    <p className="mt-2 text-base font-medium text-zinc-100">
+                      {link.value}
+                    </p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import {
+  siteDescription,
+  siteName,
+  siteTitle,
+  siteUrl,
+} from "../lib/site";
 import "./globals.css";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const title = "Hugo Hemlin | Luunom";
-const description =
-  "Portfolio of Hugo Hemlin, focused on backend systems, cloud infrastructure, DevOps workflows, and modern full-stack applications.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,11 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: title,
+    default: siteTitle,
     template: "%s | Hugo Hemlin",
   },
-  description,
-  applicationName: "Luunom Portfolio",
+  description: siteDescription,
+  applicationName: siteName,
   authors: [
     {
       name: "Hugo Hemlin",
@@ -45,18 +46,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Hugo Hemlin | Luunom Portfolio",
-    title,
-    description,
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
