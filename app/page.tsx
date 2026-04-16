@@ -1,6 +1,6 @@
 const featuredProject = {
   title: "Transport Booking & Operations Platform",
-  status: "Private Project",
+  status: "Private Repository",
   summary:
     "Production-grade logistics platform for booking, pricing, validation, order handling, analytics, and external integrations.",
   description:
@@ -24,7 +24,7 @@ const featuredProject = {
 const supportingProjects = [
   {
     title: "Cloud-Native Bulletin Board App",
-    status: "Private Project",
+    status: "Private Repository",
     summary:
       "Full-stack application used to demonstrate containerization, Kubernetes delivery, CI/CD, GitOps, Helm, and AWS plus Terraform-based deployment workflows.",
     tags: ["React", "ASP.NET Core", "MongoDB", "Kubernetes", "Terraform"],
@@ -37,7 +37,7 @@ const supportingProjects = [
   },
   {
     title: "Therapy Practice Website",
-    status: "Private Project",
+    status: "Private Repository",
     summary:
       "Responsive practice website built with Expo Router and React Native Web, with static content, contact flows, technical SEO, and AWS-backed deployment.",
     tags: [
@@ -58,7 +58,7 @@ const supportingProjects = [
 
 const experimentalProject = {
   title: "Rule-Based Data Processing Sandbox",
-  status: "Private Project",
+  status: "Private Repository",
   summary:
     ".NET 8 system for market-data ingestion, rule-based processing, backtesting, simulated execution, and runtime monitoring.",
   tags: ["C#", ".NET 8", "WebSockets", "Backtesting", "Docker"],
