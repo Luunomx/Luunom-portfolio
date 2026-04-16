@@ -9,7 +9,8 @@ export const siteDescription =
   "Portfolio of Hugo Hemlin, focused on backend systems, cloud infrastructure, DevOps workflows, and modern full-stack applications.";
 
 export const contactLinks = {
-  email: "mailto:hugohemlin@hotmail.com",
+  email: "hugohemlin@hotmail.com",
+  emailHref: "mailto:hugohemlin@hotmail.com",
   github: "https://github.com/Luunomx",
   linkedin: "https://linkedin.com/in/hugo-hemlin/",
 };

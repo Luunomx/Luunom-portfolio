@@ -20,7 +20,7 @@ const featuredProject = {
     "Integrated external services for transport logic, pricing, address validation, and operational data exchange.",
     "Worked across application code and AWS delivery workflows with a focus on reliability, data consistency, and clear boundaries.",
   ],
-  actions: [{ label: "Details on request", href: "#contact" }],
+  actions: [{ label: "Contact for details", href: "#contact" }],
 };
 
 const supportingProjects = [
@@ -35,7 +35,7 @@ const supportingProjects = [
       "Packaged the system for Kubernetes with Helm, ingress routing, and GitOps workflows.",
       "Applied end-to-end cloud delivery practices across CI/CD and AWS infrastructure provisioning.",
     ],
-    actions: [{ label: "Details on request", href: "#contact" }],
+    actions: [{ label: "Contact for details", href: "#contact" }],
   },
   {
     title: "Therapy Practice Website",
@@ -54,7 +54,7 @@ const supportingProjects = [
       "Implemented contact interactions with email, phone, map links, and clipboard copy behavior.",
       "Added SEO metadata, robots and sitemap generation, and CI/CD for static hosting on AWS.",
     ],
-    actions: [{ label: "Details on request", href: "#contact" }],
+    actions: [{ label: "Contact for details", href: "#contact" }],
   },
 ];
 
@@ -69,14 +69,14 @@ const experimentalProject = {
     "Implemented WebSocket ingestion, reconnect handling, health metrics, and runtime reporting.",
     "Used the project to explore reliability patterns for long-running data-driven systems.",
   ],
-  actions: [{ label: "Details on request", href: "#contact" }],
+  actions: [{ label: "Contact for details", href: "#contact" }],
 };
 
 const contactLinks = [
   {
     label: "Email",
     value: "hugohemlin@hotmail.com",
-    href: siteContactLinks.email,
+    href: siteContactLinks.emailHref,
   },
   {
     label: "GitHub",
