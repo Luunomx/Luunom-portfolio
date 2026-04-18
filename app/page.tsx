@@ -6,7 +6,7 @@ const featuredProject = {
   summary:
     "Production-grade logistics platform for booking, pricing, validation, order handling, analytics, and external integrations.",
   description:
-    "Built as the application and control layer on top of an existing TMS, giving operations teams a faster interface for booking flows, pricing decisions, validation, order handling, and reporting.",
+    "Built as the application and control layer on top of an existing TMS, designed to support several hundred users and thousands of requests per week in production.",
   tags: [
     "Expo",
     "React Native",
