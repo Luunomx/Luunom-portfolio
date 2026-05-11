@@ -1,4 +1,5 @@
-export const socialImageAlt = "Hugo Hemlin and Luunom portfolio preview";
+export const socialImageAlt =
+  "Hugo Hemlin cloud and backend developer portfolio preview";
 
 export const socialImageSize = {
   width: 1200,
@@ -6,9 +7,9 @@ export const socialImageSize = {
 };
 
 const badges = [
-  "Cloud Delivery",
-  "Backend Systems",
-  "Private Projects",
+  ".NET Backends",
+  "AWS Infrastructure",
+  "Kubernetes Delivery",
 ];
 
 export function PortfolioSocialPreview() {
@@ -93,7 +94,7 @@ export function PortfolioSocialPreview() {
               color: "#d4d4d8",
             }}
           >
-            Building reliable systems, cloud infrastructure, and modern
+            Reliable cloud-backed systems, .NET services, and product-facing
             applications.
           </div>
         </div>
@@ -137,7 +138,7 @@ export function PortfolioSocialPreview() {
               color: "#71717a",
             }}
           >
-            CV available on request
+            Case studies and CV
           </div>
         </div>
       </div>

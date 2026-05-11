@@ -1,12 +1,12 @@
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hugohemlin-portfolio.vercel.app";
 
-export const siteTitle = "Hugo Hemlin | Luunom";
+export const siteTitle = "Hugo Hemlin | Cloud & Backend Developer";
 
 export const siteName = "Hugo Hemlin | Luunom Portfolio";
 
 export const siteDescription =
-  "Portfolio of Hugo Hemlin, focused on backend systems, cloud infrastructure, DevOps workflows, and modern full-stack applications.";
+  "Portfolio of Hugo Hemlin, a cloud, DevOps, backend, and full-stack developer focused on .NET systems, AWS infrastructure, Kubernetes delivery, and reliable product applications.";
 
 export const contactLinks = {
   email: "hugohemlin@hotmail.com",
