@@ -6,12 +6,6 @@ import {
 } from "../lib/site";
 import { SiteChrome } from "./site-chrome";
 
-type ProjectAction = {
-  label: string;
-  href: string;
-  external?: boolean;
-};
-
 type ProjectCase = {
   title: string;
   eyebrow: string;
@@ -24,7 +18,6 @@ type ProjectCase = {
   flow: string[];
   decisions: string[];
   proof: string[];
-  actions: ProjectAction[];
   accentBorder: string;
   accentFill: string;
 };
@@ -81,7 +74,6 @@ const projectCases: ProjectCase[] = [
       "External transport, carrier, and address integrations",
       "Production usage across recurring operational workflows",
     ],
-    actions: [{ label: "Discuss architecture", href: "#contact" }],
     accentBorder: "border-emerald-400/60",
     accentFill: "bg-emerald-400",
   },
@@ -119,7 +111,6 @@ const projectCases: ProjectCase[] = [
       "Helm, ingress routing, Argo CD, and GitHub Actions",
       "Terraform-managed AWS resources including VPC, IAM, EKS, ALB, and ECR",
     ],
-    actions: [{ label: "Discuss delivery", href: "#contact" }],
     accentBorder: "border-sky-400/60",
     accentFill: "bg-sky-400",
   },
@@ -154,7 +145,6 @@ const projectCases: ProjectCase[] = [
       "Email, phone, map, and copy interactions",
       "Static AWS hosting with infrastructure automation",
     ],
-    actions: [{ label: "Discuss implementation", href: "#contact" }],
     accentBorder: "border-amber-400/60",
     accentFill: "bg-amber-400",
   },
@@ -182,7 +172,6 @@ const projectCases: ProjectCase[] = [
       "Reconnect handling and runtime health metrics",
       "Backtesting and simulated execution loops",
     ],
-    actions: [{ label: "Discuss systems work", href: "#contact" }],
     accentBorder: "border-rose-400/60",
     accentFill: "bg-rose-400",
   },
@@ -347,24 +336,6 @@ const structuredData = {
 
 const jsonLd = JSON.stringify(structuredData).replace(/</g, "\\u003c");
 
-function ProjectActions({ actions }: { actions: ProjectAction[] }) {
-  return (
-    <div className="mt-7 flex flex-wrap gap-3">
-      {actions.map((action) => (
-        <a
-          key={action.label}
-          className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-4 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-          href={action.href}
-          target={action.external ? "_blank" : undefined}
-          rel={action.external ? "noopener noreferrer" : undefined}
-        >
-          {action.label}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 function Pill({ children }: { children: React.ReactNode }) {
   return (
     <span className="rounded-md border border-zinc-800 bg-zinc-950/70 px-3 py-2 text-sm leading-none text-zinc-300">
@@ -474,7 +445,6 @@ function CaseStudy({
             ))}
           </div>
 
-          <ProjectActions actions={project.actions} />
         </div>
 
         <div className="space-y-8">
@@ -536,7 +506,7 @@ export default function Home() {
               </p>
 
               <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-                Hugo Hemlin builds reliable cloud-backed systems.
+                Hugo Hemlin
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
