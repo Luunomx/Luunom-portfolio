@@ -295,6 +295,8 @@ const contactLinks = [
   },
 ];
 
+const cvPath = "/cv/Hugo-Hemlin-CV.pdf";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -530,7 +532,7 @@ export default function Home() {
                 </a>
                 <a
                   className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-                  href="/cv/Hugo-Hemlin-CV.pdf"
+                  href={cvPath}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -688,6 +690,44 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="cv" className="border-b border-zinc-900">
+          <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
+            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+              <SectionHeader
+                eyebrow="CV"
+                title="Current resume"
+                description="The latest CV is available directly on the portfolio and as a PDF for sharing or download."
+              />
+
+              <div className="flex flex-col gap-4 sm:flex-row lg:shrink-0">
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
+                  href={cvPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open PDF
+                </a>
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
+                  href={cvPath}
+                  download
+                >
+                  Download CV
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-12 overflow-hidden rounded-md border border-zinc-800 bg-zinc-950">
+              <iframe
+                className="h-[72vh] min-h-[32rem] w-full"
+                src={`${cvPath}#view=FitH`}
+                title="Hugo Hemlin CV"
+              />
+            </div>
+          </div>
+        </section>
+
         <section id="contact">
           <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
@@ -714,7 +754,7 @@ export default function Home() {
                   </a>
                   <a
                     className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-                    href="/cv/Hugo-Hemlin-CV.pdf"
+                    href={cvPath}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
