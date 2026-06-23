@@ -26,38 +26,34 @@ export function SiteChrome() {
   useEffect(() => {
     const updateScrollState = () => {
       setIsScrolled(window.scrollY > 12);
+
+      const headerHeight =
+        document.querySelector(".site-header")?.getBoundingClientRect()
+          .height ?? 64;
+      const activationPoint = window.scrollY + headerHeight + 1;
+      const activeItem = [...navItems].reverse().find((item) => {
+        const section = document.querySelector(item.href);
+
+        if (!section) {
+          return false;
+        }
+
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+        return sectionTop <= activationPoint;
+      });
+
+      setActiveSection(activeItem?.href ?? "");
     };
 
+    updateScrollState();
+
     window.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
 
     return () => {
       window.removeEventListener("scroll", updateScrollState);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observedSections = navItems
-      .map((item) => document.querySelector(item.href))
-      .filter((section): section is Element => Boolean(section));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries.find((entry) => entry.isIntersecting);
-
-        if (visibleEntry?.target.id) {
-          setActiveSection(`#${visibleEntry.target.id}`);
-        }
-      },
-      {
-        rootMargin: "-35% 0px -50% 0px",
-        threshold: 0.01,
-      },
-    );
-
-    observedSections.forEach((section) => observer.observe(section));
-
-    return () => {
-      observer.disconnect();
+      window.removeEventListener("resize", updateScrollState);
     };
   }, []);
 
