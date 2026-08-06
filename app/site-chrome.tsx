@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 type Theme = "dark" | "light";
 
 const navItems = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
@@ -76,6 +77,9 @@ export function SiteChrome() {
                   activeSection === item.href ? "is-active" : ""
                 }`}
                 href={item.href}
+                aria-current={
+                  activeSection === item.href ? "location" : undefined
+                }
               >
                 {item.label}
               </a>
@@ -102,6 +106,25 @@ export function SiteChrome() {
               <span className="theme-toggle__thumb" />
             </span>
           </button>
+        </div>
+      </nav>
+
+      <nav className="mobile-nav sm:hidden" aria-label="Mobile navigation">
+        <div className="mx-auto flex w-full max-w-6xl gap-1 overflow-x-auto px-5 pb-3 pt-1">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              className={`site-nav-link shrink-0 ${
+                activeSection === item.href ? "is-active" : ""
+              }`}
+              href={item.href}
+              aria-current={
+                activeSection === item.href ? "location" : undefined
+              }
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </nav>
     </header>

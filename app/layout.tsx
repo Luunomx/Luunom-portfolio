@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import {
   siteDescription,
   siteName,
@@ -7,16 +6,6 @@ import {
   siteUrl,
 } from "../lib/site";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const themeInitScript = `
 (() => {
@@ -55,15 +44,16 @@ export const metadata: Metadata = {
   creator: "Hugo Hemlin",
   publisher: "Hugo Hemlin",
   keywords: [
-    "Cloud Developer",
-    "DevOps",
+    "Junior Fullstack Developer",
     "Backend Developer",
-    "Full-Stack Developer",
+    "Cloud Developer",
+    ".NET Developer",
+    "React Developer",
     "AWS",
+    "Docker",
     "Kubernetes",
     "Terraform",
     "ASP.NET Core",
-    ".NET Developer",
     "Next.js",
   ],
   alternates: {
@@ -103,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

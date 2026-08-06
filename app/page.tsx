@@ -11,29 +11,27 @@ type ProjectCase = {
   eyebrow: string;
   status: string;
   summary: string;
-  context: string;
-  role: string;
-  outcome: string;
+  contribution: string;
+  learning: string;
   tags: string[];
-  flow: string[];
-  decisions: string[];
-  proof: string[];
+  technicalEvidence: string[];
+  technologyGroups?: { label: string; items: string[] }[];
   accentBorder: string;
   accentFill: string;
 };
 
 const heroStats = [
   {
-    value: ".NET / AWS",
-    label: "Primary backend and cloud focus",
+    value: ".NET / React",
+    label: "Full-stack application development",
   },
   {
-    value: "K8s / Terraform",
-    label: "Infrastructure and delivery workflows",
+    value: "AWS / Containers",
+    label: "Cloud infrastructure and delivery workflows",
   },
   {
-    value: "Production",
-    label: "Systems built for real operational use",
+    value: "Hands-on projects",
+    label: "Practical learning through real systems",
   },
 ];
 
@@ -43,13 +41,11 @@ const projectCases: ProjectCase[] = [
     eyebrow: "Featured case",
     status: "Private repository",
     summary:
-      "A production-grade logistics platform for booking, pricing, validation, order handling, analytics, and external integrations.",
-    context:
-      "The platform acts as an application and control layer on top of an existing TMS, supporting operational transport flows for several hundred users and thousands of requests per week.",
-    role:
-      "Built product-facing flows, backend services, integration logic, validation boundaries, and cloud delivery workflows.",
-    outcome:
-      "Created a more reliable operational surface for transport bookings by separating application concerns from TMS-specific behavior and external API coordination.",
+      "A logistics platform supporting booking, pricing, validation, order handling, and integrations with transport-related services.",
+    contribution:
+      "During my internship, I contributed to application flows, backend functionality, validation, external integrations, and AWS-based deployment workflows.",
+    learning:
+      "Practical experience working in an existing codebase, integrating external systems, and understanding how application behavior connects to operational business processes.",
     tags: [
       "Expo",
       "React Native",
@@ -58,21 +54,10 @@ const projectCases: ProjectCase[] = [
       "Terraform",
       "AWS",
     ],
-    flow: [
-      "Product flows",
-      "Backend services",
-      "Transport integrations",
-      "Operational data",
-    ],
-    decisions: [
-      "Kept transport-specific validation close to the booking flow so bad data is caught before downstream systems are touched.",
-      "Separated orchestration logic from external API details to keep TMS, carrier, and address-provider integrations easier to reason about.",
-      "Worked across application code and AWS delivery workflows to keep reliability visible from feature code through deployment.",
-    ],
-    proof: [
+    technicalEvidence: [
       "Booking, pricing, validation, and order handling flows",
       "External transport, carrier, and address integrations",
-      "Production usage across recurring operational workflows",
+      "ASP.NET Core, Expo, React Native, Firebase, AWS, and Terraform",
     ],
     accentBorder: "border-emerald-400/60",
     accentFill: "bg-emerald-400",
@@ -82,13 +67,11 @@ const projectCases: ProjectCase[] = [
     eyebrow: "Cloud delivery case",
     status: "Private repository",
     summary:
-      "A full-stack application built to demonstrate containerization, Kubernetes delivery, CI/CD, GitOps, Helm, and Terraform-based AWS infrastructure.",
-    context:
-      "The project focuses on the delivery path around a practical app: application services, container images, cluster deployment, ingress, registry flow, and infrastructure provisioning.",
-    role:
-      "Implemented the React frontend, ASP.NET Core backend, MongoDB-backed data handling, Docker packaging, Helm charts, GitOps workflow, and Terraform infrastructure.",
-    outcome:
-      "Turned a normal full-stack app into a deployable cloud system with repeatable infrastructure and clear environment boundaries.",
+      "A full-stack bulletin board application used as a practical foundation for learning containerization, Kubernetes, CI/CD, GitOps, and infrastructure as code.",
+    contribution:
+      "Built the application and the delivery setup around it, including the React frontend, ASP.NET Core Minimal API, MongoDB data handling, containers, Helm, and Terraform.",
+    learning:
+      "Learned how application code, container images, cluster configuration, GitHub Actions, Argo CD, and AWS infrastructure fit together in a repeatable delivery workflow.",
     tags: [
       "React",
       "ASP.NET Core",
@@ -100,16 +83,28 @@ const projectCases: ProjectCase[] = [
       "Terraform",
       "AWS",
     ],
-    flow: ["React app", ".NET API", "Container images", "Kubernetes cluster"],
-    decisions: [
-      "Used Helm to keep Kubernetes manifests reusable and environment-specific configuration explicit.",
-      "Applied GitOps so deployment state can be reviewed and reconciled from source control.",
-      "Provisioned AWS infrastructure with Terraform to keep networking, IAM, registry, and cluster setup reproducible.",
+    technicalEvidence: [
+      "React, ASP.NET Core Minimal API, and MongoDB",
+      "Docker, Kubernetes, Helm, GitHub Actions, and Argo CD",
+      "Terraform, AWS, container registries, and infrastructure configuration",
     ],
-    proof: [
-      "Dockerized frontend and backend services",
-      "Helm, ingress routing, Argo CD, and GitHub Actions",
-      "Terraform-managed AWS resources including VPC, IAM, EKS, ALB, and ECR",
+    technologyGroups: [
+      {
+        label: "Application",
+        items: ["React", "ASP.NET Core Minimal API", "MongoDB"],
+      },
+      {
+        label: "Delivery and infrastructure",
+        items: [
+          "Docker",
+          "Kubernetes",
+          "Helm",
+          "GitHub Actions",
+          "Argo CD",
+          "Terraform",
+          "AWS",
+        ],
+      },
     ],
     accentBorder: "border-sky-400/60",
     accentFill: "bg-sky-400",
@@ -119,13 +114,11 @@ const projectCases: ProjectCase[] = [
     eyebrow: "Product implementation case",
     status: "Private repository",
     summary:
-      "A responsive practice website built with Expo Router and React Native Web, with static content, contact flows, technical SEO, and AWS-backed deployment.",
-    context:
-      "The project needed a calm public web presence with clear content, route-based pages, responsive navigation, contact actions, and static deployment.",
-    role:
-      "Built reusable UI components, route structure, responsive behavior, contact interactions, SEO metadata, robots, sitemap, and AWS deployment workflow.",
-    outcome:
-      "Delivered a maintainable client-facing website with practical contact paths and search-friendly technical foundations.",
+      "A client-facing practice website focused on a responsive interface, clear route structure, contact actions, technical SEO, and deployment.",
+    contribution:
+      "Built the reusable interface, route structure, responsive navigation, phone and email actions, SEO metadata, robots, sitemap, and deployment workflow.",
+    learning:
+      "Practised keeping a small customer-facing website clear, maintainable, and easy to use across screen sizes without adding unnecessary complexity.",
     tags: [
       "Expo Router",
       "React Native Web",
@@ -134,16 +127,10 @@ const projectCases: ProjectCase[] = [
       "AWS",
       "Terraform",
     ],
-    flow: ["Routes", "Responsive UI", "Contact paths", "Static hosting"],
-    decisions: [
-      "Kept content-driven pages simple and route-based so future edits stay low-risk.",
-      "Handled phone, email, map links, and clipboard copy as first-class user actions.",
-      "Added metadata, robots, sitemap, and CI/CD so the public site has the basic production pieces around it.",
-    ],
-    proof: [
+    technicalEvidence: [
       "Responsive navigation and reusable components",
       "Email, phone, map, and copy interactions",
-      "Static AWS hosting with infrastructure automation",
+      "Expo Router, React Native Web, TypeScript, SEO, AWS, and Terraform",
     ],
     accentBorder: "border-amber-400/60",
     accentFill: "bg-amber-400",
@@ -153,24 +140,16 @@ const projectCases: ProjectCase[] = [
     eyebrow: "Systems exploration",
     status: "Private repository",
     summary:
-      "A .NET 8 system for market-data ingestion, rule-based processing, backtesting, simulated execution, and runtime monitoring.",
-    context:
-      "The project explores long-running data-driven systems where ingestion, reconnect behavior, processing consistency, and runtime visibility matter.",
-    role:
-      "Built WebSocket ingestion, bar aggregation, multi-timeframe rule evaluation, backtesting paths, simulated execution, health metrics, and runtime reporting.",
-    outcome:
-      "Created a focused environment for testing reliability patterns around streaming data, stateful processing, and rule evaluation.",
+      "A personal .NET project for exploring streaming data, WebSocket reliability, aggregation, rule evaluation, backtesting, and runtime monitoring.",
+    contribution:
+      "Built long-running processes for WebSocket ingestion, reconnect handling, stateful processing, aggregation, backtesting, and runtime monitoring.",
+    learning:
+      "Explored how streaming input, state, rule evaluation, and observability interact in a long-running system. It is a technical sandbox, not a finished trading product.",
     tags: ["C#", ".NET 8", "WebSockets", "Backtesting", "Docker"],
-    flow: ["WebSocket data", "Aggregation", "Rule engine", "Runtime metrics"],
-    decisions: [
-      "Separated ingestion from processing so reconnect behavior and data transformation stay easier to test.",
-      "Used backtesting paths to compare rule behavior before applying it to simulated runtime execution.",
-      "Added health and runtime reporting to make long-running behavior observable instead of hidden.",
-    ],
-    proof: [
+    technicalEvidence: [
       "Bar aggregation and multi-timeframe evaluation",
       "Reconnect handling and runtime health metrics",
-      "Backtesting and simulated execution loops",
+      "Backtesting and rule-evaluation loops",
     ],
     accentBorder: "border-rose-400/60",
     accentFill: "bg-rose-400",
@@ -186,22 +165,30 @@ const skillGroups = [
       ".NET 8",
       "REST APIs",
       "Validation",
-      "System boundaries",
+      "API design fundamentals",
     ],
   },
   {
-    title: "Cloud",
-    items: ["AWS", "Azure", "Google Cloud", "IAM", "VPC", "Static hosting"],
-  },
-  {
-    title: "DevOps",
+    title: "Cloud & Infrastructure",
     items: [
+      "AWS",
+      "Terraform",
       "Docker",
       "Kubernetes",
       "Helm",
-      "Terraform",
+      "IAM fundamentals",
+      "VPC fundamentals",
+    ],
+  },
+  {
+    title: "Delivery",
+    items: [
       "GitHub Actions",
       "Argo CD",
+      "CI/CD",
+      "Git workflows",
+      "Container registries",
+      "Deployment workflows",
     ],
   },
   {
@@ -223,18 +210,18 @@ const skillGroups = [
       "WebSockets",
       "Backtesting",
       "Runtime monitoring",
-      "Pipelines",
+      "Data processing",
     ],
   },
   {
-    title: "Working style",
+    title: "Practices & Approach",
     items: [
-      "Clean code",
-      "TDD basics",
-      "Automation",
+      "Clean code principles",
+      "TDD fundamentals",
       "Documentation",
-      "Reliability",
-      "Customer context",
+      "System design fundamentals",
+      "AI-assisted development",
+      "Continuous learning",
     ],
   },
 ];
@@ -245,9 +232,9 @@ const experience = [
     organization: "Prioritaire STHLM AB",
     period: "2026",
     points: [
-      "Built on a production logistics platform acting as a control layer over an existing TMS.",
-      "Developed backend services for booking logic, pricing decisions, validation, and system orchestration.",
-      "Worked with AWS, Terraform, CI/CD, and integrations across Opter, DHL, UPS, and Google APIs.",
+      "Contributed to a logistics platform acting as an application layer on top of the existing TMS, Opter.",
+      "Worked on backend functionality related to booking flows, pricing logic, validation, and system integrations.",
+      "Integrated with external APIs including Opter, DHL, UPS, and Google APIs, and gained experience with AWS, Terraform, and CI/CD workflows.",
     ],
   },
   {
@@ -255,9 +242,9 @@ const experience = [
     organization: "Sunpricer AB",
     period: "2019 - 2023",
     points: [
-      "Worked in a fast-paced, target-driven environment with strong requirements on structure and prioritization.",
-      "Built communication and problem-solving habits through daily customer interaction.",
-      "Carried a disciplined, goal-oriented way of working into software projects and delivery work.",
+      "Worked in a fast-paced, target-driven sales environment requiring structure, prioritization, and resilience.",
+      "Developed strong communication and problem-solving skills through daily customer interaction.",
+      "Built a disciplined and goal-oriented approach that I now apply to software development.",
     ],
   },
 ];
@@ -265,9 +252,9 @@ const experience = [
 const education = [
   {
     title: "Cloud Developer",
-    organization: "Campus Molndal",
-    period: "2024 - 2026",
-    detail: "Graduating summer 2026",
+    organization: "Campus Mölndal",
+    period: "2024–2026",
+    detail: "Completed June 2026",
   },
   {
     title: "Languages",
@@ -307,24 +294,25 @@ const structuredData = {
       url: siteUrl,
       description: siteDescription,
       email: siteContactLinks.email,
-      jobTitle: "Cloud, DevOps, Backend, and Full-Stack Developer",
+      jobTitle: "Junior Fullstack Developer",
       sameAs: [siteContactLinks.github, siteContactLinks.linkedin],
       knowsAbout: [
-        "Cloud infrastructure",
-        "DevOps",
         "Backend development",
         "Full-stack development",
+        "Cloud infrastructure",
         "AWS",
+        "Docker",
         "Kubernetes",
         "Terraform",
         ".NET",
         "ASP.NET Core",
         "React",
         "TypeScript",
+        "Data processing",
       ],
       alumniOf: {
         "@type": "EducationalOrganization",
-        name: "Campus Molndal",
+        name: "Campus Mölndal",
       },
     },
     {
@@ -370,22 +358,6 @@ function SectionHeader({
   );
 }
 
-function SystemFlow({ steps, accent }: { steps: string[]; accent: string }) {
-  return (
-    <ol className="grid gap-3 sm:grid-cols-2" aria-label="System flow">
-      {steps.map((step) => (
-        <li
-          key={step}
-          className="relative min-h-24 rounded-md border border-zinc-800 bg-zinc-950 p-4"
-        >
-          <div className={`h-1 w-10 rounded-full ${accent}`} />
-          <p className="mt-5 text-sm font-semibold text-zinc-100">{step}</p>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
 function CaseStudy({
   project,
   featured = false,
@@ -399,7 +371,7 @@ function CaseStudy({
         featured ? "p-6 sm:p-8" : "p-6"
       }`}
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)]">
+      <div>
         <div>
           <div className="flex flex-wrap items-center gap-3">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
@@ -418,25 +390,21 @@ function CaseStudy({
           <p className="mt-5 text-lg leading-8 text-zinc-300">
             {project.summary}
           </p>
-          <p className="mt-5 text-base leading-8 text-zinc-400">
-            {project.context}
-          </p>
-
           <div className="mt-7 grid gap-4 sm:grid-cols-2">
             <div className="border-l border-zinc-700 pl-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                Role
+                My contribution
               </p>
               <p className="mt-3 text-sm leading-7 text-zinc-300">
-                {project.role}
+                {project.contribution}
               </p>
             </div>
             <div className="border-l border-zinc-700 pl-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                Result
+                What I learned
               </p>
               <p className="mt-3 text-sm leading-7 text-zinc-300">
-                {project.outcome}
+                {project.learning}
               </p>
             </div>
           </div>
@@ -446,43 +414,42 @@ function CaseStudy({
               <Pill key={tag}>{tag}</Pill>
             ))}
           </div>
-
         </div>
 
-        <div className="space-y-8">
-          <SystemFlow steps={project.flow} accent={project.accentFill} />
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              Key decisions
-            </p>
-            <ul className="mt-4 space-y-4 text-sm leading-7 text-zinc-400">
-              {project.decisions.map((decision) => (
-                <li key={decision} className="flex gap-3">
-                  <span
-                    className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${project.accentFill}`}
-                  />
-                  <span>{decision}</span>
-                </li>
-              ))}
-            </ul>
+        {project.technologyGroups ? (
+          <div className="mt-8 grid gap-5 border-t border-zinc-800 pt-7 sm:grid-cols-2">
+            {project.technologyGroups.map((group) => (
+              <div key={group.label}>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  {group.label}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {group.items.map((item) => (
+                    <Pill key={item}>{item}</Pill>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+        ) : null}
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              Evidence
-            </p>
-            <ul className="mt-4 grid gap-3 text-sm text-zinc-300">
-              {project.proof.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-md border border-zinc-800 bg-zinc-950 px-4 py-3"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-8 border-t border-zinc-800 pt-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+            Technical evidence
+          </p>
+          <ul className="mt-4 grid gap-3 text-sm text-zinc-300 sm:grid-cols-3">
+            {project.technicalEvidence.map((item) => (
+              <li
+                key={item}
+                className="rounded-md border border-zinc-800 bg-zinc-950 px-4 py-3"
+              >
+                <span
+                  className={`mr-2 inline-block h-1.5 w-1.5 rounded-full ${project.accentFill}`}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </article>
@@ -504,7 +471,7 @@ export default function Home() {
           <div className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.85fr)] lg:px-16">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
-                Backend / Cloud / DevOps
+                Junior Fullstack Developer · .NET · Cloud
               </p>
 
               <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-7xl">
@@ -512,15 +479,15 @@ export default function Home() {
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-                Developer focused on .NET backends, AWS infrastructure,
-                Kubernetes delivery, and product-facing applications that need
-                clear boundaries and operational reliability.
+                I build full-stack applications with a particular interest in
+                backend development, cloud infrastructure, and software
+                architecture.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-500">
-                I work best where application code, infrastructure, and real
-                user workflows meet: booking logic, integrations, deployment
-                paths, data processing, and maintainable product surfaces.
+                My experience comes from an internship, academic work, and
+                hands-on projects using .NET, React, Docker, Kubernetes,
+                Terraform, and AWS.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -528,7 +495,13 @@ export default function Home() {
                   className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
                   href="#projects"
                 >
-                  View case studies
+                  View projects
+                </a>
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
+                  href="#contact"
+                >
+                  Contact me
                 </a>
                 <a
                   className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
@@ -537,14 +510,6 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   View CV
-                </a>
-                <a
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-                  href={siteContactLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
                 </a>
               </div>
             </div>
@@ -569,10 +534,36 @@ export default function Home() {
                   Current direction
                 </p>
                 <p className="mt-4 text-base leading-7 text-zinc-300">
-                  Open to cloud, DevOps, backend, and full-stack roles where
-                  reliability, automation, and practical architecture matter.
+                  Open to junior full-stack, backend, and cloud-focused
+                  development roles where I can continue learning while
+                  contributing to practical software systems.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="border-b border-zinc-900">
+          <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 lg:px-16">
+            <SectionHeader
+              eyebrow="About"
+              title="A practical route into software development"
+              description="I recently completed a two-year Cloud Developer programme at Campus Mölndal after transitioning into technology from a background in sales."
+            />
+
+            <div className="mt-8 grid gap-6 text-base leading-8 text-zinc-400 lg:grid-cols-2">
+              <p>
+                I am particularly interested in backend development, full-stack
+                systems, cloud infrastructure, and understanding how different
+                parts of a system work together.
+              </p>
+              <p>
+                My experience comes mainly from an internship, academic work,
+                and personal projects. I use AI-assisted development for
+                research, code exploration, debugging, and comparing
+                implementation approaches, while reviewing and working to
+                understand the resulting code.
+              </p>
             </div>
           </div>
         </section>
@@ -581,8 +572,8 @@ export default function Home() {
           <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
             <SectionHeader
               eyebrow="Selected work"
-              title="Case studies with the architecture made visible"
-              description="Most repositories are private, so the portfolio focuses on role, system shape, decisions, and evidence instead of only linking to code."
+              title="Selected projects"
+              description="A concise view of what each project is, what I contributed, the technologies involved, and the technical problems I explored."
             />
 
             <div className="mt-14">
@@ -695,8 +686,8 @@ export default function Home() {
             <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
               <SectionHeader
                 eyebrow="CV"
-                title="Current resume"
-                description="The latest CV is available directly on the portfolio and as a PDF for sharing or download."
+                title="A concise overview"
+                description="Download my CV for a concise overview of my experience, education, projects, and technical background."
               />
 
               <div className="flex flex-col gap-4 sm:flex-row lg:shrink-0">
@@ -706,24 +697,16 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Open PDF
+                  View CV
                 </a>
                 <a
                   className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
                   href={cvPath}
                   download
                 >
-                  Download CV
+                  Download PDF
                 </a>
               </div>
-            </div>
-
-            <div className="mt-12 overflow-hidden rounded-md border border-zinc-800 bg-zinc-950">
-              <iframe
-                className="h-[72vh] min-h-[32rem] w-full"
-                src={`${cvPath}#view=FitH`}
-                title="Hugo Hemlin CV"
-              />
             </div>
           </div>
         </section>
@@ -737,8 +720,8 @@ export default function Home() {
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Looking for roles across cloud, DevOps, backend, and
-                  full-stack product work.
+                  Looking for junior full-stack, backend, and cloud-focused
+                  development roles.
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
                   The best conversation is usually around architecture,

@@ -1,5 +1,5 @@
 export const socialImageAlt =
-  "Hugo Hemlin cloud and backend developer portfolio preview";
+  "Hugo Hemlin junior fullstack developer portfolio preview";
 
 export const socialImageSize = {
   width: 1200,
@@ -7,9 +7,9 @@ export const socialImageSize = {
 };
 
 const badges = [
-  ".NET Backends",
-  "AWS Infrastructure",
-  "Kubernetes Delivery",
+  ".NET / React",
+  "AWS / Containers",
+  "Hands-on projects",
 ];
 
 export function PortfolioSocialPreview() {
@@ -54,7 +54,7 @@ export function PortfolioSocialPreview() {
               color: "#a1a1aa",
             }}
           >
-            Cloud / DevOps / Full-Stack
+            Junior Fullstack Developer · .NET · Cloud
           </div>
 
           <div
@@ -94,8 +94,7 @@ export function PortfolioSocialPreview() {
               color: "#d4d4d8",
             }}
           >
-            Reliable cloud-backed systems, .NET services, and product-facing
-            applications.
+            Full-stack applications with a backend and cloud focus.
           </div>
         </div>
 

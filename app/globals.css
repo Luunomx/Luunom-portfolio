@@ -26,6 +26,8 @@ html[data-theme="dark"] {
   --accent-amber: #fbbf24;
   --accent-rose: #fb7185;
   --shadow-soft: rgb(0 0 0 / 0.28);
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 html[data-theme="light"] {
@@ -53,6 +55,8 @@ html[data-theme="light"] {
   --accent-amber: #b45309;
   --accent-rose: #be123c;
   --shadow-soft: rgb(15 23 42 / 0.12);
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
@@ -202,6 +206,18 @@ main.bg-zinc-950 {
   box-shadow: 0 12px 34px var(--shadow-soft);
 }
 
+.mobile-nav {
+  border-top: 1px solid var(--line);
+}
+
+.mobile-nav > div {
+  scrollbar-width: none;
+}
+
+.mobile-nav > div::-webkit-scrollbar {
+  display: none;
+}
+
 .site-brand {
   color: var(--text-strong);
   font-size: 0.875rem;
@@ -329,6 +345,12 @@ button:focus-visible {
     animation-duration: 1ms !important;
     scroll-behavior: auto !important;
     transition-duration: 1ms !important;
+  }
+}
+
+@media (max-width: 639px) {
+  section {
+    scroll-margin-top: 7.25rem;
   }
 }
 
