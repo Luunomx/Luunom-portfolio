@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   publisher: "Hugo Hemlin",
   keywords: [
     "Junior Fullstack Developer",
+    "Fullstack Developer",
     "Backend Developer",
     "Cloud Developer",
     ".NET Developer",

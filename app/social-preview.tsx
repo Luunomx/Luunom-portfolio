@@ -1,5 +1,5 @@
 export const socialImageAlt =
-  "Hugo Hemlin junior fullstack developer portfolio preview";
+  "Hugo Hemlin fullstack developer portfolio preview";
 
 export const socialImageSize = {
   width: 1200,
@@ -54,7 +54,7 @@ export function PortfolioSocialPreview() {
               color: "#a1a1aa",
             }}
           >
-            Junior Fullstack Developer · .NET · Cloud
+            Fullstack Developer · .NET · Cloud
           </div>
 
           <div

@@ -294,7 +294,7 @@ const structuredData = {
       url: siteUrl,
       description: siteDescription,
       email: siteContactLinks.email,
-      jobTitle: "Junior Fullstack Developer",
+      jobTitle: "Fullstack Developer",
       sameAs: [siteContactLinks.github, siteContactLinks.linkedin],
       knowsAbout: [
         "Backend development",
@@ -471,7 +471,7 @@ export default function Home() {
           <div className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.85fr)] lg:px-16">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
-                Junior Fullstack Developer · .NET · Cloud
+                Fullstack Developer · .NET · Cloud
               </p>
 
               <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-7xl">
@@ -534,7 +534,7 @@ export default function Home() {
                   Current direction
                 </p>
                 <p className="mt-4 text-base leading-7 text-zinc-300">
-                  Open to junior full-stack, backend, and cloud-focused
+                  Open to full-stack, backend, and cloud-focused
                   development roles where I can continue learning while
                   contributing to practical software systems.
                 </p>
@@ -720,7 +720,7 @@ export default function Home() {
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Looking for junior full-stack, backend, and cloud-focused
+                  Looking for full-stack, backend, and cloud-focused
                   development roles.
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
