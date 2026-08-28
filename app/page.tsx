@@ -20,11 +20,15 @@ type ProjectCase = {
   repositoryHref?: string;
   websiteHref?: string;
   localSetupHref?: string;
-  architecture?: {
+  diagrams?: {
+    title: string;
+    description: string;
     src: string;
     alt: string;
     caption: string;
-  };
+    width: number;
+    height: number;
+  }[];
   accentBorder: string;
   accentFill: string;
 };
@@ -72,57 +76,100 @@ const projectCases: ProjectCase[] = [
     accentFill: "bg-emerald-400",
   },
   {
-    title: "BulletinBoard — React, .NET & Kubernetes on AWS",
-    eyebrow: "Cloud delivery case",
+    title: "BulletinBoard — Production-Minded Kubernetes Platform",
+    eyebrow: "Cloud delivery · Production-minded platform",
     status: "Public repository",
     summary:
-      "A small full-stack bulletin board application that demonstrates the path from local Docker development to a Kubernetes deployment setup on AWS EKS, using Helm, Argo CD, and Terraform.",
+      "A full-stack bulletin board application with a production-minded delivery path from local Docker development to AWS EKS, including signed images, GitOps, secrets, backups, observability, and operational verification.",
     contribution:
-      "Built the application and the delivery path around it: a React/Vite frontend, ASP.NET Core 8 Minimal API, MongoDB data handling, Docker Compose, Helm/Kubernetes configuration, Terraform for AWS/EKS, and a manual GitHub Actions showcase workflow.",
+      "Built the React/Vite frontend and ASP.NET Core 8 API around a delivery platform with MongoDB, WebSockets, Docker Compose, GitHub Actions image promotion, SBOM/provenance and Cosign signing, Terraform EKS provisioning, Argo CD bootstrap, least-privilege IAM/IRSA, and optional backup/observability profiles.",
     learning:
-      "Learned how application code, container images, cluster configuration, GitOps, secrets management, and AWS infrastructure fit together in a repeatable delivery workflow.",
+      "Learned how to design beyond the happy path: OIDC and approval gates, immutable artifacts, health/readiness, rate limiting, persistent storage, TLS, restore drills, observability, secret rotation, and day-two operations.",
     tags: [
       "React/Vite",
       "ASP.NET Core 8",
       "MongoDB",
+      "WebSockets",
       "Docker",
       "Kubernetes",
-      "AWS",
+      "GitHub Actions",
+      "Terraform",
+      "AWS EKS",
     ],
     technicalEvidence: [
-      "React/Vite, ASP.NET Core 8 Minimal API, and MongoDB",
-      "Local Docker Compose plus container images prepared for GHCR",
-      "Helm, Argo CD, Terraform, AWS EKS/ALB, and Secrets Manager",
+      "React/Vite + ASP.NET Core 8 API + MongoDB with REST, WebSockets, health checks and metrics",
+      "GitHub Actions tests, scans, SBOM/provenance, Cosign signing, and immutable GHCR image promotion",
+      "Terraform-provisioned EKS with Argo CD, IRSA, secrets, TLS, persistent storage, backup/restore and observability",
     ],
     technologyGroups: [
       {
         label: "Application",
-        items: ["React/Vite", "ASP.NET Core 8 Minimal API", "MongoDB"],
+        items: [
+          "React/Vite",
+          "ASP.NET Core 8 Minimal API",
+          "MongoDB",
+          "WebSockets",
+        ],
       },
       {
         label: "Delivery and infrastructure",
         items: [
           "Docker",
-          "GitHub Actions (showcase)",
+          "GitHub Actions",
           "GHCR",
+          "Cosign/SBOM",
           "Helm",
-          "Kubernetes",
           "Argo CD",
+          "Kubernetes",
           "Terraform",
           "AWS EKS",
-          "AWS Secrets Manager",
+          "IRSA/KMS",
+          "Secrets Manager",
+        ],
+      },
+      {
+        label: "Operations and resilience",
+        items: [
+          "NGINX Ingress",
+          "cert-manager TLS",
+          "Health checks",
+          "Rate limiting",
+          "HPA/PDB",
+          "MongoDB replica set",
+          "Redis backplane",
+          "S3 backup/restore",
+          "Prometheus/Grafana",
+          "Loki/Tempo",
         ],
       },
     ],
     repositoryHref: "https://github.com/Luunomx/kubernetes-solution",
     localSetupHref:
       "https://github.com/Luunomx/kubernetes-solution#run-locally",
-    architecture: {
-      src: "/projects/kubernetes-solution/architecture.svg",
-      alt: "Architecture diagram showing the React and ASP.NET Core application moving through Docker, GHCR, Helm, Argo CD, and AWS EKS Kubernetes infrastructure.",
-      caption:
-        "Local development → container delivery → Kubernetes/AWS runtime",
-    },
+    diagrams: [
+      {
+        title: "Architecture overview",
+        description:
+          "Application components, delivery workflow, and AWS runtime architecture.",
+        src: "/projects/kubernetes-solution/architecture.svg",
+        alt: "Architecture diagram showing the React and ASP.NET Core application moving through Docker, GHCR, Helm, Argo CD, and AWS EKS Kubernetes infrastructure with secrets, backups, and observability.",
+        caption:
+          "Local development → tested and signed containers → GitOps → Kubernetes/AWS runtime",
+        width: 1500,
+        height: 1020,
+      },
+      {
+        title: "Production deployment flow",
+        description:
+          "The ordered path from prerequisites and access to verification and day-two operations.",
+        src: "/projects/kubernetes-solution/deployment-flow.svg",
+        alt: "Numbered production deployment flow showing AWS and GitHub preparation, Terraform provisioning, Argo CD reconciliation, EKS verification, approval gates, and day-two operations.",
+        caption:
+          "Prepare → provision → reconcile and verify → production gate and operations",
+        width: 1500,
+        height: 1150,
+      },
+    ],
     accentBorder: "border-sky-400/60",
     accentFill: "bg-sky-400",
   },
@@ -490,42 +537,67 @@ function CaseStudy({
           ) : null}
         </div>
 
-        {project.architecture ? (
-          <figure className="mt-8 border-t border-zinc-800 pt-7">
-            <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-                  Architecture overview
-                </p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  How the application, delivery workflow, and AWS runtime fit
-                  together.
-                </p>
-              </div>
-              <a
-                className="text-sm font-semibold text-sky-300 underline decoration-sky-300/40 underline-offset-4 transition-colors hover:text-white"
-                href={project.architecture.src}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open full-size diagram ↗
-              </a>
+        {project.diagrams ? (
+          <section className="mt-8 border-t border-zinc-800 pt-7" aria-label="Architecture and delivery diagrams">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              Architecture and delivery
+            </p>
+            <p className="mt-2 text-sm leading-7 text-zinc-400">
+              Open either diagram to explore the production-minded application,
+              delivery, and operations path.
+            </p>
+            <div className="mt-5 grid gap-4">
+              {project.diagrams.map((diagram) => (
+                <details
+                  key={diagram.title}
+                  className="diagram-disclosure rounded-md border border-zinc-800 bg-zinc-950/70"
+                >
+                  <summary className="diagram-disclosure__summary flex cursor-pointer list-none items-center justify-between gap-5 px-5 py-4">
+                    <span>
+                      <span className="block text-base font-semibold text-zinc-100">
+                        {diagram.title}
+                      </span>
+                      <span className="mt-1 block text-sm leading-6 text-zinc-400">
+                        {diagram.description}
+                      </span>
+                    </span>
+                    <span
+                      className="diagram-disclosure__icon shrink-0 text-2xl font-light leading-none text-sky-300"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <div className="border-t border-zinc-800 px-3 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4">
+                    <div className="flex justify-end">
+                      <a
+                        className="text-sm font-semibold text-sky-300 underline decoration-sky-300/40 underline-offset-4 transition-colors hover:text-white"
+                        href={diagram.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open full-size diagram ↗
+                      </a>
+                    </div>
+                    <div className="mt-4 overflow-hidden rounded-lg border border-zinc-800 bg-[#0b1220] p-2 sm:p-3">
+                      <Image
+                        src={diagram.src}
+                        width={diagram.width}
+                        height={diagram.height}
+                        sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(100vw - 5rem), 1024px"
+                        className="h-auto w-full"
+                        alt={diagram.alt}
+                        unoptimized
+                      />
+                    </div>
+                    <p className="mt-3 text-sm text-zinc-500">
+                      {diagram.caption}
+                    </p>
+                  </div>
+                </details>
+              ))}
             </div>
-            <div className="mt-5 overflow-hidden rounded-lg border border-zinc-800 bg-[#0b1220] p-2 sm:p-3">
-              <Image
-                src={project.architecture.src}
-                width={1400}
-                height={900}
-                sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(100vw - 5rem), 1024px"
-                className="h-auto w-full"
-                alt={project.architecture.alt}
-                unoptimized
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-zinc-500">
-              {project.architecture.caption}
-            </figcaption>
-          </figure>
+          </section>
         ) : null}
 
         {project.technologyGroups ? (
