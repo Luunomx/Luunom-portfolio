@@ -105,7 +105,7 @@
     <rect filter="url(#shadow)" x="760" y="325" width="205" height="160" rx="16" fill="url(#platform)"/>
     <text x="785" y="363" class="box-title">ASP.NET Core API</text>
     <text x="785" y="395" class="box-text">Verify token</text>
-    <text x="785" y="419" class="box-text">Validate and decide flow</text>
+    <text x="785" y="419" class="box-text">Validate + decide flow</text>
     <text x="785" y="443" class="box-text">Controlled backend</text>
     <text x="785" y="467" class="box-text">boundary</text>
   </g>
