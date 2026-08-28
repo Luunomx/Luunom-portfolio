@@ -109,7 +109,7 @@
   <text x="716" y="551" class="small">desired state</text>
 
   <g>
-    <rect filter="url(#shadow)" x="980" y="185" width="450" height="600" rx="22" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+    <rect filter="url(#shadow)" x="980" y="185" width="450" height="625" rx="22" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
     <text x="1015" y="228" class="box-title">AWS EKS / Kubernetes</text>
     <text x="1250" y="228" class="chip">CLOUD RUNTIME</text>
 
@@ -137,17 +137,18 @@
     <text x="1035" y="623" class="box-text">optional for scale-out</text>
     <text x="1035" y="642" class="box-text">realtime fan-out</text>
 
-    <rect x="1225" y="560" width="170" height="125" rx="14" fill="#164e63"/>
+    <rect x="1225" y="560" width="170" height="155" rx="14" fill="#164e63"/>
     <text x="1245" y="596" class="box-title" font-size="16">Observability</text>
-    <text x="1245" y="623" class="box-text">Prometheus + Grafana</text>
-    <text x="1245" y="644" class="box-text">Alertmanager + Loki</text>
-    <text x="1245" y="665" class="box-text">Alloy + Tempo</text>
-    <text x="1245" y="683" class="box-text">S3 / IRSA retention</text>
+    <text x="1245" y="623" class="box-text">Prometheus +</text>
+    <text x="1245" y="644" class="box-text">Grafana + Loki</text>
+    <text x="1245" y="665" class="box-text">Alertmanager</text>
+    <text x="1245" y="686" class="box-text">Alloy + Tempo</text>
+    <text x="1245" y="707" class="box-text">S3 retention</text>
 
-    <rect x="1015" y="700" width="380" height="70" rx="14" fill="#164e63"/>
-    <text x="1035" y="728" class="box-title" font-size="16">MongoDB backup + restore</text>
-    <text x="1035" y="750" class="box-text">optional S3 + bucket-scoped IRSA</text>
-    <text x="1035" y="768" class="box-text">manual restore drill</text>
+    <rect x="1015" y="730" width="380" height="75" rx="14" fill="#164e63"/>
+    <text x="1035" y="758" class="box-title" font-size="16">MongoDB backup + restore</text>
+    <text x="1035" y="781" class="box-text">optional S3 + bucket-scoped IRSA</text>
+    <text x="1035" y="801" class="box-text">manual restore drill</text>
   </g>
   <path d="M900 660 C940 660 950 272 1009 266" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
   <path d="M900 460 C940 450 975 300 1030 300 C1090 300 1155 300 1180 300 C1205 300 1215 315 1219 330" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-teal)"/>

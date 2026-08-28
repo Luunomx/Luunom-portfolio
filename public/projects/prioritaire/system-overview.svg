@@ -69,61 +69,64 @@
   </g>
 
   <g>
-    <rect filter="url(#shadow)" x="70" y="145" width="1360" height="88" rx="16" fill="#334155" stroke="#64748b" stroke-width="2"/>
+    <rect filter="url(#shadow)" x="70" y="145" width="1360" height="110" rx="16" fill="#334155" stroke="#64748b" stroke-width="2"/>
     <text x="100" y="181" class="box-title">System purpose</text>
-    <text x="100" y="209" class="purpose-text">A logistics booking and operations app connecting authenticated company users to pricing, booking, order status, tracking, admin views and external transport systems through a controlled backend.</text>
+    <text x="100" y="209" class="purpose-text">A logistics booking and operations app connecting authenticated company users to pricing, booking, order status,</text>
+    <text x="100" y="233" class="purpose-text">tracking, admin views and external transport systems through a controlled backend.</text>
   </g>
 
   <text x="70" y="275" class="section">1 · PRODUCT REQUEST FLOW</text>
   <line x1="70" y1="294" x2="1430" y2="294" stroke="#334155" stroke-width="2"/>
 
   <g>
-    <rect filter="url(#shadow)" x="70" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
+    <rect filter="url(#shadow)" x="70" y="325" width="205" height="160" rx="16" fill="url(#app)"/>
     <text x="95" y="363" class="box-title">Company users</text>
     <text x="95" y="395" class="box-text">Bookers</text>
     <text x="95" y="419" class="box-text">Admins</text>
     <text x="95" y="443" class="box-text">Internal roles</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="300" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
-    <text x="325" y="363" class="box-title">Expo / React Native</text>
+    <rect filter="url(#shadow)" x="300" y="325" width="205" height="160" rx="16" fill="url(#app)"/>
+    <text x="325" y="363" class="box-title" font-size="16">Expo / React Native</text>
     <text x="325" y="395" class="box-text">Login session</text>
     <text x="325" y="419" class="box-text">Booking and order UI</text>
     <text x="325" y="443" class="box-text">Authenticated client</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="530" y="325" width="205" height="145" rx="16" fill="url(#identity)"/>
+    <rect filter="url(#shadow)" x="530" y="325" width="205" height="160" rx="16" fill="url(#identity)"/>
     <text x="555" y="363" class="box-title">Firebase Auth</text>
     <text x="555" y="395" class="box-text">User identity</text>
     <text x="555" y="419" class="box-text">ID token lifecycle</text>
     <text x="555" y="443" class="box-text">Company profile scope</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="760" y="325" width="205" height="145" rx="16" fill="url(#platform)"/>
+    <rect filter="url(#shadow)" x="760" y="325" width="205" height="160" rx="16" fill="url(#platform)"/>
     <text x="785" y="363" class="box-title">ASP.NET Core API</text>
     <text x="785" y="395" class="box-text">Verify token</text>
     <text x="785" y="419" class="box-text">Validate and decide flow</text>
-    <text x="785" y="443" class="box-text">Controlled backend boundary</text>
+    <text x="785" y="443" class="box-text">Controlled backend</text>
+    <text x="785" y="467" class="box-text">boundary</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="990" y="325" width="205" height="145" rx="16" fill="url(#integration)"/>
+    <rect filter="url(#shadow)" x="990" y="325" width="205" height="160" rx="16" fill="url(#integration)"/>
     <text x="1015" y="363" class="box-title">Logistics systems</text>
     <text x="1015" y="395" class="box-text">Pricing and booking</text>
-    <text x="1015" y="419" class="box-text">Status and webhook sync</text>
-    <text x="1015" y="443" class="box-text">Carrier tracking</text>
+    <text x="1015" y="419" class="box-text">Status and webhook</text>
+    <text x="1015" y="443" class="box-text">sync</text>
+    <text x="1015" y="467" class="box-text">Carrier tracking</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="1220" y="325" width="210" height="145" rx="16" fill="url(#result)"/>
-    <text x="1245" y="363" class="box-title">Operational result</text>
+    <rect filter="url(#shadow)" x="1220" y="325" width="210" height="160" rx="16" fill="url(#result)"/>
+    <text x="1245" y="363" class="box-title" font-size="16">Operational result</text>
     <text x="1245" y="395" class="box-text">Booking created</text>
     <text x="1245" y="419" class="box-text">Status visible</text>
     <text x="1245" y="443" class="box-text">Tracking updated</text>
   </g>
-  <path d="M280 397 L295 397" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M510 397 L525 397" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M740 397 L755 397" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M970 397 L985 397" fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
-  <path d="M1200 397 L1215 397" fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+  <path d="M280 405 L295 405" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M510 405 L525 405" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+  <path d="M740 405 L755 405" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+  <path d="M970 405 L985 405" fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+  <path d="M1200 405 L1215 405" fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
   <text x="745" y="310" class="small flow-label" text-anchor="middle">authenticated request</text>
 
   <text x="70" y="530" class="section">2 · BACKEND CORE, DATA MODEL AND DATABASES</text>
@@ -179,9 +182,9 @@
   <path d="M390 670 L415 670" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
   <path d="M760 670 L785 670" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
   <path d="M1110 670 L1135 670" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M862 470 C862 515 945 515 945 570" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-teal)"/>
+  <path d="M862 485 C862 515 945 515 945 570" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-teal)"/>
   <text x="965" y="530" class="small flow-label">user + company scope</text>
-  <path d="M1090 470 C1090 510 1275 510 1275 560" fill="none" stroke="#93c5fd" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-blue)"/>
+  <path d="M1090 485 C1090 510 1275 510 1275 560" fill="none" stroke="#93c5fd" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-blue)"/>
   <text x="1190" y="515" class="small flow-label">read model</text>
 
   <text x="70" y="820" class="section">3 · DELIVERY CONTROL PLANE</text>
