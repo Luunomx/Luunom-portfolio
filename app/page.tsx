@@ -51,12 +51,12 @@ const heroStats = [
 const projectCases: ProjectCase[] = [
   {
     title: "Transport Booking & Operations Platform",
-    eyebrow: "Featured case",
-    status: "Private repository",
+    eyebrow: "Internship experience",
+    status: "Confidential client project",
     summary:
-      "A logistics platform supporting booking, pricing, validation, order handling, and integrations with transport-related services.",
+      "A client-facing logistics platform supporting transport booking, pricing, validation, order handling, and integrations with external transport systems.",
     contribution:
-      "During my internship, I contributed to application flows, backend functionality, validation, external integrations, and AWS-based deployment workflows.",
+      "During my internship, I contributed to application flows, backend functionality, validation, external integrations, and AWS-based deployment workflows within an existing codebase.",
     learning:
       "Practical experience working in an existing codebase, integrating external systems, and understanding how application behavior connects to operational business processes.",
     tags: [
@@ -71,6 +71,19 @@ const projectCases: ProjectCase[] = [
       "Booking, pricing, validation, and order handling flows",
       "External transport, carrier, and address integrations",
       "ASP.NET Core, Expo, React Native, Firebase, AWS, and Terraform",
+    ],
+    diagrams: [
+      {
+        title: "Sanitized system overview",
+        description:
+          "A high-level, interview-safe view of the application, delivery control plane, and AWS runtime boundary.",
+        src: "/projects/prioritaire/system-overview.svg",
+        alt: "Sanitized system overview showing company users, a React Native frontend, Firebase authentication, an ASP.NET Core API, logistics integrations, data stores, CI/CD, Terraform, and AWS runtime services.",
+        caption:
+          "Sanitized architecture overview — no secrets, live data, or private endpoints",
+        width: 1500,
+        height: 1240,
+      },
     ],
     accentBorder: "border-emerald-400/60",
     accentFill: "bg-emerald-400",
@@ -540,11 +553,14 @@ function CaseStudy({
         {project.diagrams ? (
           <section className="mt-8 border-t border-zinc-800 pt-7" aria-label="Architecture and delivery diagrams">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              Architecture and delivery
+              {project.diagrams.length > 1
+                ? "Architecture and delivery"
+                : "System overview"}
             </p>
             <p className="mt-2 text-sm leading-7 text-zinc-400">
-              Open either diagram to explore the production-minded application,
-              delivery, and operations path.
+              {project.diagrams.length > 1
+                ? "Open either diagram to explore the production-minded application, delivery, and operations path."
+                : "Open the sanitized overview to explore the application, delivery control plane, and AWS runtime boundary."}
             </p>
             <div className="mt-5 grid gap-4">
               {project.diagrams.map((diagram) => (

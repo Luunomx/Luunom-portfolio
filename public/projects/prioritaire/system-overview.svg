@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1240" viewBox="0 0 1500 1240" role="img" aria-labelledby="title desc">
+  <title id="title">Prioritaire sanitized system overview</title>
+  <desc id="desc">A sanitized, interview-safe overview of a logistics booking and operations application, from users and authentication through backend services, delivery control and AWS runtime services. It contains no secrets, live data or private endpoints.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="app" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="identity" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15803d"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="platform" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="integration" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="result" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#93c5fd"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#fcd34d"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+      .section { font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; letter-spacing: 1.5px; }
+      .box-title { font: 700 18px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .box-text { font: 400 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #dbeafe; }
+      .small { font: 500 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+      .flow-label { stroke: #0f172a; stroke-width: 3px; stroke-linejoin: round; paint-order: stroke fill; }
+      .legend { font: 500 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .chip { font: 700 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #a5f3fc; letter-spacing: .8px; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="1240" rx="28" fill="url(#bg)"/>
+  <circle cx="1360" cy="90" r="250" fill="#4f46e5" opacity=".12"/>
+  <circle cx="120" cy="1120" r="300" fill="#0891b2" opacity=".10"/>
+
+  <text x="70" y="70" class="title">Prioritaire — unified system overview</text>
+  <text x="70" y="103" class="subtitle">A sanitized story: user action, Firebase identity, backend decisions, logistics integrations, persistent state, AWS runtime and CI/CD.</text>
+  <g>
+    <rect x="1080" y="42" width="350" height="66" rx="14" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+    <text x="1100" y="70" class="chip">INTERVIEW-SAFE · SANITIZED VIEW</text>
+    <text x="1100" y="92" class="small">No secrets, live data or private endpoints</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="145" width="1360" height="88" rx="16" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <text x="100" y="181" class="box-title">System purpose</text>
+    <text x="100" y="209" class="box-text">A logistics booking and operations app connecting authenticated company users to pricing, booking, order status, tracking, admin views and external transport systems through a controlled backend.</text>
+  </g>
+
+  <text x="70" y="275" class="section">1 · PRODUCT REQUEST FLOW</text>
+  <line x1="70" y1="294" x2="1430" y2="294" stroke="#334155" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
+    <text x="95" y="363" class="box-title">Company users</text>
+    <text x="95" y="395" class="box-text">Bookers</text>
+    <text x="95" y="419" class="box-text">Admins</text>
+    <text x="95" y="443" class="box-text">Internal roles</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="300" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
+    <text x="325" y="363" class="box-title">Expo / React Native</text>
+    <text x="325" y="395" class="box-text">Login session</text>
+    <text x="325" y="419" class="box-text">Booking and order UI</text>
+    <text x="325" y="443" class="box-text">Authenticated client</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="530" y="325" width="205" height="145" rx="16" fill="url(#identity)"/>
+    <text x="555" y="363" class="box-title">Firebase Auth</text>
+    <text x="555" y="395" class="box-text">User identity</text>
+    <text x="555" y="419" class="box-text">ID token lifecycle</text>
+    <text x="555" y="443" class="box-text">Company profile scope</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="760" y="325" width="205" height="145" rx="16" fill="url(#platform)"/>
+    <text x="785" y="363" class="box-title">ASP.NET Core API</text>
+    <text x="785" y="395" class="box-text">Verify token</text>
+    <text x="785" y="419" class="box-text">Validate and decide flow</text>
+    <text x="785" y="443" class="box-text">Controlled backend boundary</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="990" y="325" width="205" height="145" rx="16" fill="url(#integration)"/>
+    <text x="1015" y="363" class="box-title">Logistics systems</text>
+    <text x="1015" y="395" class="box-text">Pricing and booking</text>
+    <text x="1015" y="419" class="box-text">Status and webhook sync</text>
+    <text x="1015" y="443" class="box-text">Carrier tracking</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1220" y="325" width="210" height="145" rx="16" fill="url(#result)"/>
+    <text x="1245" y="363" class="box-title">Operational result</text>
+    <text x="1245" y="395" class="box-text">Booking created</text>
+    <text x="1245" y="419" class="box-text">Status visible</text>
+    <text x="1245" y="443" class="box-text">Tracking updated</text>
+  </g>
+  <path d="M275 397 L292 397" fill="none" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M505 397 L522 397" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M735 397 L752 397" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M965 397 L982 397" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <path d="M1195 397 L1212 397" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <text x="745" y="310" class="small flow-label" text-anchor="middle">authenticated request</text>
+
+  <text x="70" y="530" class="section">2 · BACKEND CORE, DATA MODEL AND DATABASES</text>
+  <line x1="70" y1="549" x2="1430" y2="549" stroke="#334155" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="580" width="315" height="180" rx="16" fill="#164e63"/>
+    <text x="100" y="620" class="box-title">API entry points</text>
+    <text x="100" y="653" class="box-text">Decision, price and order endpoints</text>
+    <text x="100" y="678" class="box-text">Admin and order read endpoints</text>
+    <text x="100" y="703" class="box-text">Health checks and rate limits</text>
+    <text x="100" y="738" class="small">Keeps request handling explicit and testable</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="420" y="580" width="335" height="180" rx="16" fill="#164e63"/>
+    <text x="450" y="620" class="box-title">Domain services</text>
+    <text x="450" y="653" class="box-text">Booking decision engine</text>
+    <text x="450" y="678" class="box-text">Integration orchestration</text>
+    <text x="450" y="703" class="box-text">Sync, webhook and tracking flow</text>
+    <text x="450" y="738" class="small">Business flow lives behind API controllers</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="790" y="580" width="315" height="180" rx="16" fill="url(#identity)"/>
+    <text x="820" y="620" class="box-title">Auth and tenant context</text>
+    <text x="820" y="653" class="box-text">Firebase token verification</text>
+    <text x="820" y="678" class="box-text">User and company scope</text>
+    <text x="820" y="703" class="box-text">Tenant-aware validation</text>
+    <text x="820" y="738" class="small">Prevents cross-company access</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1140" y="570" width="290" height="200" rx="16" fill="#312e81" stroke="#a78bfa" stroke-width="2"/>
+    <text x="1170" y="610" class="box-title">Databases and read model</text>
+    <g>
+      <ellipse cx="1194" cy="650" rx="28" ry="9" fill="#bbf7d0" stroke="#86efac" stroke-width="2"/>
+      <path d="M1166 650 v24 c0 5 13 9 28 9s28-4 28-9v-24" fill="#14532d" stroke="#86efac" stroke-width="2"/>
+      <ellipse cx="1194" cy="674" rx="28" ry="9" fill="#166534" stroke="#86efac" stroke-width="2"/>
+      <text x="1240" y="657" class="box-text">Firestore profiles</text>
+      <text x="1240" y="678" class="small">user + company scope</text>
+    </g>
+    <g>
+      <ellipse cx="1194" cy="705" rx="28" ry="9" fill="#ddd6fe" stroke="#a78bfa" stroke-width="2"/>
+      <path d="M1166 705 v24 c0 5 13 9 28 9s28-4 28-9v-24" fill="#4c1d95" stroke="#a78bfa" stroke-width="2"/>
+      <ellipse cx="1194" cy="729" rx="28" ry="9" fill="#5b21b6" stroke="#a78bfa" stroke-width="2"/>
+      <text x="1240" y="712" class="box-text">PostgreSQL orders DB</text>
+      <text x="1240" y="733" class="small">schema + migrations</text>
+    </g>
+    <g>
+      <ellipse cx="1194" cy="760" rx="28" ry="9" fill="#dbeafe" stroke="#93c5fd" stroke-width="2"/>
+      <path d="M1166 760 v8 c0 5 13 9 28 9s28-4 28-9v-8" fill="#1e3a5f" stroke="#93c5fd" stroke-width="2"/>
+      <text x="1240" y="766" class="small">SQLite local/dev database</text>
+    </g>
+  </g>
+  <path d="M385 670 L412 670" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M755 670 L782 670" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M1105 670 L1132 670" fill="none" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M862 470 C862 515 945 515 945 570" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-teal)"/>
+  <text x="965" y="530" class="small flow-label">tenant context</text>
+  <path d="M1090 470 C1090 510 1275 510 1275 560" fill="none" stroke="#93c5fd" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-blue)"/>
+  <text x="1190" y="515" class="small flow-label">read model</text>
+
+  <text x="70" y="820" class="section">3 · DELIVERY CONTROL PLANE</text>
+  <line x1="70" y1="839" x2="1430" y2="839" stroke="#334155" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="70" y="865" width="1360" height="120" rx="18" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+    <text x="100" y="902" class="box-title">Delivery control plane</text>
+    <rect x="335" y="875" width="285" height="78" rx="12" fill="#1e293b" stroke="#93c5fd" stroke-width="2"/>
+    <text x="360" y="907" class="box-title" font-size="16">App source + Dockerfiles</text>
+    <text x="360" y="932" class="small">C# backend, EF model/migrations, images</text>
+    <rect x="650" y="875" width="310" height="78" rx="12" fill="#172554" stroke="#93c5fd" stroke-width="2"/>
+    <text x="675" y="907" class="box-title" font-size="16">GitHub Actions CI/CD</text>
+    <text x="675" y="932" class="small">validate, test, build, push ECR, deploy</text>
+    <rect x="990" y="875" width="290" height="78" rx="12" fill="#451a03" stroke="#fdba74" stroke-width="2"/>
+    <text x="1015" y="907" class="box-title" font-size="16">Terraform IaC</text>
+    <text x="1015" y="932" class="small">manage RDS, App Runner, S3, bootstrap jobs</text>
+    <text x="1300" y="898" class="small">Environment-aware</text>
+    <text x="1300" y="920" class="small">schema and deploy</text>
+    <text x="1300" y="942" class="small">controls</text>
+  </g>
+  <path d="M620 914 L642 914" fill="none" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M960 914 L982 914" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+
+  <text x="70" y="1040" class="section">4 · AWS RUNTIME BOUNDARY</text>
+  <line x1="70" y1="1059" x2="1430" y2="1059" stroke="#334155" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="70" y="1080" width="1360" height="145" rx="20" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="1115" class="box-title">AWS runtime boundary</text>
+    <text x="360" y="1115" class="small">Managed container runtime, private data access, externalized secrets and baseline observability.</text>
+
+    <rect x="100" y="1140" width="190" height="70" rx="12" fill="#172554" stroke="#93c5fd" stroke-width="2"/>
+    <text x="120" y="1167" class="box-title" font-size="16">Edge and frontend</text>
+    <text x="120" y="1191" class="box-text">CloudFront / WAF</text>
+    <text x="120" y="1207" class="small">Frontend App Runner</text>
+
+    <rect x="315" y="1140" width="190" height="70" rx="12" fill="#134e4a" stroke="#5eead4" stroke-width="2"/>
+    <text x="335" y="1167" class="box-title" font-size="16">Backend runtime</text>
+    <text x="335" y="1191" class="box-text">Backend App Runner</text>
+    <text x="335" y="1207" class="small">Docker image from ECR</text>
+
+    <rect x="530" y="1140" width="190" height="70" rx="12" fill="#312e81" stroke="#a78bfa" stroke-width="2"/>
+    <text x="550" y="1167" class="box-title" font-size="16">Data and storage</text>
+    <text x="550" y="1191" class="box-text">RDS PostgreSQL</text>
+    <text x="550" y="1207" class="small">S3/object storage</text>
+
+    <rect x="745" y="1140" width="190" height="70" rx="12" fill="#3f1d26" stroke="#fda4af" stroke-width="2"/>
+    <text x="765" y="1167" class="box-title" font-size="16">Secrets and config</text>
+    <text x="765" y="1191" class="box-text">Secrets Manager refs</text>
+    <text x="765" y="1207" class="small">No values in repo/state</text>
+
+    <rect x="960" y="1140" width="190" height="70" rx="12" fill="#451a03" stroke="#fdba74" stroke-width="2"/>
+    <text x="980" y="1167" class="box-title" font-size="16">Observability</text>
+    <text x="980" y="1191" class="box-text">CloudWatch logs/alarms</text>
+    <text x="980" y="1207" class="small">OTel maturity path</text>
+
+    <rect x="1175" y="1140" width="225" height="70" rx="12" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+    <text x="1195" y="1167" class="box-title" font-size="16">Environments</text>
+    <text x="1195" y="1191" class="box-text">Dev/prod boundaries</text>
+    <text x="1195" y="1207" class="small">Gated production changes</text>
+  </g>
+  <path d="M290 1175 L307 1175" fill="none" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M505 1175 L522 1175" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M720 1175 L737 1175" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M935 1175 L952 1175" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M1150 1175 L1167 1175" fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow-blue)"/>
+</svg>
