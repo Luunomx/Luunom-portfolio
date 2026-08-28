@@ -124,11 +124,11 @@
     <text x="1245" y="419" class="box-text">Status visible</text>
     <text x="1245" y="443" class="box-text">Tracking updated</text>
   </g>
-  <path d="M278 405 L297 405" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M508 405 L527 405" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M738 405 L757 405" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M968 405 L987 405" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
-  <path d="M1198 405 L1217 405" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+  <path d="M278 405 L297 405" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M508 405 L527 405" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M738 405 L757 405" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M968 405 L987 405" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-amber)"/>
+  <path d="M1198 405 L1217 405" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-amber)"/>
   <text x="745" y="310" class="small flow-label" text-anchor="middle">authenticated request</text>
 
   <text x="70" y="530" class="section">2 · BACKEND CORE, DATA MODEL AND DATABASES</text>
@@ -181,9 +181,9 @@
       <text x="1240" y="766" class="small">SQLite local/dev database</text>
     </g>
   </g>
-  <path d="M388 670 L417 670" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M758 670 L787 670" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M1108 670 L1137 670" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M388 670 L417 670" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M758 670 L787 670" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M1108 670 L1137 670" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
   <path d="M862 485 C862 515 945 515 945 570" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-teal)"/>
   <text x="945" y="512" class="small flow-label" text-anchor="middle">user + company scope</text>
   <path d="M1090 485 C1090 510 1275 510 1275 560" fill="none" stroke="#93c5fd" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-blue)"/>
@@ -209,8 +209,8 @@
     <text x="1295" y="920" class="small" font-size="13">schema + deploy</text>
     <text x="1295" y="942" class="small" font-size="13">controls</text>
   </g>
-  <path d="M623 914 L647 914" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M963 914 L987 914" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+  <path d="M623 914 L647 914" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M963 914 L987 914" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-amber)"/>
 
   <text x="70" y="1040" class="section">4 · AWS RUNTIME BOUNDARY</text>
   <line x1="70" y1="1059" x2="1430" y2="1059" stroke="#334155" stroke-width="2"/>
@@ -249,10 +249,10 @@
     <text x="1195" y="1191" class="box-text">Dev/prod boundaries</text>
     <text x="1195" y="1207" class="small">Gated production changes</text>
   </g>
-  <path d="M293 1175 L312 1175" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M508 1175 L527 1175" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
-  <path d="M723 1175 L742 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M938 1175 L957 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M1153 1175 L1172 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M293 1175 L312 1175" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M508 1175 L527 1175" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M723 1175 L742 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M938 1175 L957 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M1153 1175 L1172 1175" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
   </g>
 </svg>
