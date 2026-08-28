@@ -47,11 +47,11 @@
       .subtitle { font: 400 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
       .section { font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; letter-spacing: 1.5px; }
       .box-title { font: 700 18px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
-      .box-text { font: 500 15px Inter, ui-sans-serif, system-ui, sans-serif; fill: #dbeafe; }
+      .box-text { font: 600 15px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
       .purpose-text { font: 500 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #dbeafe; }
-      .small { font: 500 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+      .small { font: 600 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
       .flow-label { stroke: #0f172a; stroke-width: 3px; stroke-linejoin: round; paint-order: stroke fill; }
-      .legend { font: 500 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .legend { font: 600 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
       .chip { font: 700 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #a5f3fc; letter-spacing: .8px; }
     </style>
   </defs>
