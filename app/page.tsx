@@ -451,16 +451,6 @@ function CaseStudy({
               >
                 View public repository ↗
               </a>
-              {project.localSetupHref ? (
-                <a
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
-                  href={project.localSetupHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Run it locally ↗
-                </a>
-              ) : null}
             </div>
           ) : null}
 
@@ -480,7 +470,7 @@ function CaseStudy({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View local setup in the README ↗
+                Read the local setup in the README ↗
               </a>
             </div>
           ) : null}
