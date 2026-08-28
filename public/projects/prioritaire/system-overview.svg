@@ -68,8 +68,8 @@
     <text x="1100" y="92" class="small">No secrets, live data or private endpoints</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="145" width="1360" height="88" rx="16" fill="#334155" stroke="#64748b" stroke-width="2"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="145" width="1360" height="88" rx="16" fill="#334155" stroke="#64748b" stroke-width="2"/>
     <text x="100" y="181" class="box-title">System purpose</text>
     <text x="100" y="209" class="purpose-text">A logistics booking and operations app connecting authenticated company users to pricing, booking, order status, tracking, admin views and external transport systems through a controlled backend.</text>
   </g>
@@ -77,43 +77,43 @@
   <text x="70" y="275" class="section">1 · PRODUCT REQUEST FLOW</text>
   <line x1="70" y1="294" x2="1430" y2="294" stroke="#334155" stroke-width="2"/>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
     <text x="95" y="363" class="box-title">Company users</text>
     <text x="95" y="395" class="box-text">Bookers</text>
     <text x="95" y="419" class="box-text">Admins</text>
     <text x="95" y="443" class="box-text">Internal roles</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="300" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
+  <g>
+    <rect filter="url(#shadow)" x="300" y="325" width="205" height="145" rx="16" fill="url(#app)"/>
     <text x="325" y="363" class="box-title">Expo / React Native</text>
     <text x="325" y="395" class="box-text">Login session</text>
     <text x="325" y="419" class="box-text">Booking and order UI</text>
     <text x="325" y="443" class="box-text">Authenticated client</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="530" y="325" width="205" height="145" rx="16" fill="url(#identity)"/>
+  <g>
+    <rect filter="url(#shadow)" x="530" y="325" width="205" height="145" rx="16" fill="url(#identity)"/>
     <text x="555" y="363" class="box-title">Firebase Auth</text>
     <text x="555" y="395" class="box-text">User identity</text>
     <text x="555" y="419" class="box-text">ID token lifecycle</text>
     <text x="555" y="443" class="box-text">Company profile scope</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="760" y="325" width="205" height="145" rx="16" fill="url(#platform)"/>
+  <g>
+    <rect filter="url(#shadow)" x="760" y="325" width="205" height="145" rx="16" fill="url(#platform)"/>
     <text x="785" y="363" class="box-title">ASP.NET Core API</text>
     <text x="785" y="395" class="box-text">Verify token</text>
     <text x="785" y="419" class="box-text">Validate and decide flow</text>
     <text x="785" y="443" class="box-text">Controlled backend boundary</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="990" y="325" width="205" height="145" rx="16" fill="url(#integration)"/>
+  <g>
+    <rect filter="url(#shadow)" x="990" y="325" width="205" height="145" rx="16" fill="url(#integration)"/>
     <text x="1015" y="363" class="box-title">Logistics systems</text>
     <text x="1015" y="395" class="box-text">Pricing and booking</text>
     <text x="1015" y="419" class="box-text">Status and webhook sync</text>
     <text x="1015" y="443" class="box-text">Carrier tracking</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="1220" y="325" width="210" height="145" rx="16" fill="url(#result)"/>
+  <g>
+    <rect filter="url(#shadow)" x="1220" y="325" width="210" height="145" rx="16" fill="url(#result)"/>
     <text x="1245" y="363" class="box-title">Operational result</text>
     <text x="1245" y="395" class="box-text">Booking created</text>
     <text x="1245" y="419" class="box-text">Status visible</text>
@@ -129,32 +129,32 @@
   <text x="70" y="530" class="section">2 · BACKEND CORE, DATA MODEL AND DATABASES</text>
   <line x1="70" y1="549" x2="1430" y2="549" stroke="#334155" stroke-width="2"/>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="580" width="315" height="180" rx="16" fill="url(#platform)"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="580" width="315" height="180" rx="16" fill="url(#platform)"/>
     <text x="100" y="620" class="box-title">API entry points</text>
     <text x="100" y="653" class="box-text">Decision, price and order endpoints</text>
     <text x="100" y="678" class="box-text">Admin and order read endpoints</text>
     <text x="100" y="703" class="box-text">Health checks and rate limits</text>
     <text x="100" y="738" class="small">Keeps request handling explicit and testable</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="420" y="580" width="335" height="180" rx="16" fill="url(#platform)"/>
+  <g>
+    <rect filter="url(#shadow)" x="420" y="580" width="335" height="180" rx="16" fill="url(#platform)"/>
     <text x="450" y="620" class="box-title">Domain services</text>
     <text x="450" y="653" class="box-text">Booking decision engine</text>
     <text x="450" y="678" class="box-text">Integration orchestration</text>
     <text x="450" y="703" class="box-text">Sync, webhook and tracking flow</text>
     <text x="450" y="738" class="small">Business flow lives behind API controllers</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="790" y="580" width="315" height="180" rx="16" fill="url(#identity)"/>
+  <g>
+    <rect filter="url(#shadow)" x="790" y="580" width="315" height="180" rx="16" fill="url(#identity)"/>
     <text x="820" y="620" class="box-title">Auth and tenant context</text>
     <text x="820" y="653" class="box-text">Firebase token verification</text>
     <text x="820" y="678" class="box-text">User and company scope</text>
     <text x="820" y="703" class="box-text">Tenant-aware validation</text>
     <text x="820" y="738" class="small">Prevents cross-company access</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="1140" y="570" width="290" height="220" rx="16" fill="#312e81" stroke="#a78bfa" stroke-width="2"/>
+  <g>
+    <rect filter="url(#shadow)" x="1140" y="570" width="290" height="220" rx="16" fill="#312e81" stroke="#a78bfa" stroke-width="2"/>
     <text x="1170" y="610" class="box-title">Databases and read model</text>
     <g>
       <ellipse cx="1194" cy="650" rx="28" ry="9" fill="#bbf7d0" stroke="#86efac" stroke-width="2"/>
@@ -186,8 +186,8 @@
 
   <text x="70" y="820" class="section">3 · DELIVERY CONTROL PLANE</text>
   <line x1="70" y1="839" x2="1430" y2="839" stroke="#334155" stroke-width="2"/>
-  <g filter="url(#shadow)">
-    <rect x="70" y="865" width="1360" height="120" rx="18" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="865" width="1360" height="120" rx="18" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
     <text x="100" y="902" class="box-title">Delivery control plane</text>
     <rect x="335" y="875" width="285" height="78" rx="12" fill="#1e293b"/>
     <text x="360" y="907" class="box-title" font-size="16">App source + Dockerfiles</text>
@@ -209,8 +209,8 @@
 
   <text x="70" y="1040" class="section">4 · AWS RUNTIME BOUNDARY</text>
   <line x1="70" y1="1059" x2="1430" y2="1059" stroke="#334155" stroke-width="2"/>
-  <g filter="url(#shadow)">
-    <rect x="70" y="1080" width="1360" height="145" rx="20" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="1080" width="1360" height="145" rx="20" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
     <text x="100" y="1115" class="box-title">AWS runtime boundary</text>
     <text x="360" y="1115" class="small">Managed container runtime, private data access, externalized secrets and baseline observability.</text>
 

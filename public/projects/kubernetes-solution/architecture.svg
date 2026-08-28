@@ -54,23 +54,23 @@
   <text x="500" y="164" class="section">DELIVERY / GITOPS</text>
   <text x="980" y="164" class="section">RUNTIME / AWS</text>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="195" width="330" height="145" rx="18" fill="url(#app)"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="195" width="330" height="145" rx="18" fill="url(#app)"/>
     <text x="100" y="235" class="box-title">React + Vite frontend</text>
     <text x="100" y="264" class="box-text">simple-fluid-page/</text>
     <text x="100" y="291" class="box-text">Nginx-served bulletin board UI</text>
     <text x="100" y="318" class="box-text">REST + realtime WebSocket client</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="70" y="380" width="330" height="165" rx="18" fill="url(#app)"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="380" width="330" height="165" rx="18" fill="url(#app)"/>
     <text x="100" y="420" class="box-title">ASP.NET Core 8 API</text>
     <text x="100" y="449" class="box-text">webapp/</text>
     <text x="100" y="476" class="box-text">REST posts + /api/ws</text>
     <text x="100" y="503" class="box-text">rate limiting, health checks</text>
     <text x="100" y="530" class="box-text">metrics + optional Redis backplane</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="70" y="585" width="330" height="165" rx="18" fill="#334155"/>
+  <g>
+    <rect filter="url(#shadow)" x="70" y="585" width="330" height="165" rx="18" fill="#334155"/>
     <text x="100" y="625" class="box-title">Local development</text>
     <text x="100" y="654" class="box-text">dotnet + Vite</text>
     <text x="100" y="681" class="box-text">in-memory store for a fast demo</text>
@@ -80,22 +80,22 @@
   <path d="M235 345 L235 374" fill="none" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
   <text x="253" y="365" class="small">REST / WebSocket</text>
 
-  <g filter="url(#shadow)">
-    <rect x="500" y="195" width="400" height="180" rx="18" fill="#334155"/>
+  <g>
+    <rect filter="url(#shadow)" x="500" y="195" width="400" height="180" rx="18" fill="#334155"/>
     <text x="530" y="235" class="box-title">GitHub Actions</text>
     <text x="530" y="264" class="box-text">app push → test, build, scan, sign</text>
     <text x="530" y="291" class="box-text">promote SHA tags → GHCR + GitOps</text>
     <text x="530" y="318" class="box-text">manual EKS → approval + Terraform</text>
     <text x="530" y="345" class="box-text">showcase-dry-run.yml → safe preview</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="500" y="395" width="400" height="130" rx="18" fill="url(#platform)"/>
+  <g>
+    <rect filter="url(#shadow)" x="500" y="395" width="400" height="130" rx="18" fill="url(#platform)"/>
     <text x="530" y="435" class="box-title">GHCR</text>
     <text x="530" y="464" class="box-text">Backend + frontend images</text>
     <text x="530" y="491" class="box-text">SBOM + signed immutable SHA tags</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="500" y="570" width="400" height="180" rx="18" fill="url(#platform)"/>
+  <g>
+    <rect filter="url(#shadow)" x="500" y="570" width="400" height="180" rx="18" fill="url(#platform)"/>
     <text x="530" y="610" class="box-title">Argo CD + Helm</text>
     <text x="530" y="639" class="box-text">Terraform bootstrap → root app</text>
     <text x="530" y="666" class="box-text">gitops/apps/ + k8s/helm/</text>
@@ -108,8 +108,8 @@
   <text x="716" y="376" class="small">publish</text>
   <text x="716" y="551" class="small">desired state</text>
 
-  <g filter="url(#shadow)">
-    <rect x="980" y="185" width="450" height="600" rx="22" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+  <g>
+    <rect filter="url(#shadow)" x="980" y="185" width="450" height="600" rx="22" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
     <text x="1015" y="228" class="box-title">AWS EKS / Kubernetes</text>
     <text x="1250" y="228" class="chip">CLOUD RUNTIME</text>
 
@@ -154,14 +154,14 @@
   <text x="912" y="456" class="small flow-label">Argo sync</text>
   <text x="912" y="425" class="small flow-label">image pull</text>
 
-  <g filter="url(#shadow)">
-    <rect x="980" y="825" width="210" height="115" rx="18" fill="url(#security)"/>
+  <g>
+    <rect filter="url(#shadow)" x="980" y="825" width="210" height="115" rx="18" fill="url(#security)"/>
     <text x="1010" y="865" class="box-title">AWS Secrets</text>
     <text x="1010" y="894" class="box-text">Secrets Manager</text>
     <text x="1010" y="921" class="box-text">Mongo credentials</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="1220" y="825" width="210" height="115" rx="18" fill="#475569"/>
+  <g>
+    <rect filter="url(#shadow)" x="1220" y="825" width="210" height="115" rx="18" fill="#475569"/>
     <text x="1250" y="865" class="box-title">Terraform</text>
     <text x="1250" y="894" class="box-text">VPC + EKS + IRSA/KMS</text>
     <text x="1250" y="921" class="box-text">audit logs + Access Entries</text>
