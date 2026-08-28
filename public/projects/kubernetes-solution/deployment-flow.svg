@@ -112,7 +112,7 @@
     <text x="1030" y="524" class="card-text">Create VPC, EKS nodes, EBS CSI, IRSA + KMS/logs</text>
     <text x="1030" y="549" class="card-text">Create storage, secret wiring and environment outputs</text>
   </g>
-  <path d="M1215 330 C1215 350 1000 365 760 365 C520 365 240 365 40 365 L40 410 C40 410 160 410 285 410" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M1215 330 C1215 350 1000 365 760 365 C520 365 240 365 40 365 L40 492 L70 492" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <text x="760" y="355" class="flow-label" text-anchor="middle">continue</text>
   <path d="M505 492 L525 492" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M970 492 L990 492" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
@@ -148,7 +148,7 @@
   </g>
   <path d="M505 727 L525 727" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M970 727 L990 727" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M1215 565 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 645 C40 645 160 645 285 645" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M1215 565 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 727 L70 727" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <text x="760" y="590" class="flow-label" text-anchor="middle">continue</text>
   <path d="M1215 800 L1215 850" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
   <text x="1230" y="830" class="flow-label">gate</text>
