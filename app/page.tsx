@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   contactLinks as siteContactLinks,
   siteDescription,
@@ -16,6 +17,13 @@ type ProjectCase = {
   tags: string[];
   technicalEvidence: string[];
   technologyGroups?: { label: string; items: string[] }[];
+  repositoryHref?: string;
+  localSetupHref?: string;
+  architecture?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   accentBorder: string;
   accentFill: string;
 };
@@ -63,49 +71,57 @@ const projectCases: ProjectCase[] = [
     accentFill: "bg-emerald-400",
   },
   {
-    title: "Cloud-Native Bulletin Board Platform",
+    title: "BulletinBoard — React, .NET & Kubernetes on AWS",
     eyebrow: "Cloud delivery case",
-    status: "Private repository",
+    status: "Public repository",
     summary:
-      "A full-stack bulletin board application used as a practical foundation for learning containerization, Kubernetes, CI/CD, GitOps, and infrastructure as code.",
+      "A small full-stack bulletin board application that demonstrates the path from local Docker development to a Kubernetes deployment setup on AWS EKS, using Helm, Argo CD, and Terraform.",
     contribution:
-      "Built the application and the delivery setup around it, including the React frontend, ASP.NET Core Minimal API, MongoDB data handling, containers, Helm, and Terraform.",
+      "Built the application and the delivery path around it: a React/Vite frontend, ASP.NET Core 8 Minimal API, MongoDB data handling, Docker Compose, Helm/Kubernetes configuration, Terraform for AWS/EKS, and a manual GitHub Actions showcase workflow.",
     learning:
-      "Learned how application code, container images, cluster configuration, GitHub Actions, Argo CD, and AWS infrastructure fit together in a repeatable delivery workflow.",
+      "Learned how application code, container images, cluster configuration, GitOps, secrets management, and AWS infrastructure fit together in a repeatable delivery workflow.",
     tags: [
-      "React",
-      "ASP.NET Core",
+      "React/Vite",
+      "ASP.NET Core 8",
       "MongoDB",
       "Docker",
       "Kubernetes",
-      "Helm",
-      "Argo CD",
-      "Terraform",
       "AWS",
     ],
     technicalEvidence: [
-      "React, ASP.NET Core Minimal API, and MongoDB",
-      "Docker, Kubernetes, Helm, GitHub Actions, and Argo CD",
-      "Terraform, AWS, container registries, and infrastructure configuration",
+      "React/Vite, ASP.NET Core 8 Minimal API, and MongoDB",
+      "Local Docker Compose plus container images prepared for GHCR",
+      "Helm, Argo CD, Terraform, AWS EKS/ALB, and Secrets Manager",
     ],
     technologyGroups: [
       {
         label: "Application",
-        items: ["React", "ASP.NET Core Minimal API", "MongoDB"],
+        items: ["React/Vite", "ASP.NET Core 8 Minimal API", "MongoDB"],
       },
       {
         label: "Delivery and infrastructure",
         items: [
           "Docker",
-          "Kubernetes",
+          "GitHub Actions (showcase)",
+          "GHCR",
           "Helm",
-          "GitHub Actions",
+          "Kubernetes",
           "Argo CD",
           "Terraform",
-          "AWS",
+          "AWS EKS",
+          "AWS Secrets Manager",
         ],
       },
     ],
+    repositoryHref: "https://github.com/Luunomx/kubernetes-solution",
+    localSetupHref:
+      "https://github.com/Luunomx/kubernetes-solution#run-locally",
+    architecture: {
+      src: "/projects/kubernetes-solution/architecture.svg",
+      alt: "Architecture diagram showing the React and ASP.NET Core application moving through Docker, GHCR, Helm, Argo CD, and AWS EKS Kubernetes infrastructure.",
+      caption:
+        "Local development → container delivery → Kubernetes/AWS runtime",
+    },
     accentBorder: "border-sky-400/60",
     accentFill: "bg-sky-400",
   },
@@ -424,7 +440,89 @@ function CaseStudy({
               <Pill key={tag}>{tag}</Pill>
             ))}
           </div>
+
+          {project.repositoryHref ? (
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
+                href={project.repositoryHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View public repository ↗
+              </a>
+              {project.localSetupHref ? (
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-zinc-700 px-5 text-sm font-semibold text-zinc-100 transition-colors hover:border-zinc-500 hover:bg-zinc-900"
+                  href={project.localSetupHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Run it locally ↗
+                </a>
+              ) : null}
+            </div>
+          ) : null}
+
+          {project.localSetupHref ? (
+            <div className="mt-8 rounded-md border border-zinc-800 bg-zinc-950 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                Try it locally
+              </p>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-300">
+                Want to see the application in action? Run it locally with
+                Docker Compose. The README includes both a quick in-memory mode
+                and a persistent MongoDB-backed mode.
+              </p>
+              <a
+                className="mt-4 inline-flex text-sm font-semibold text-sky-300 underline decoration-sky-300/40 underline-offset-4 transition-colors hover:text-white"
+                href={project.localSetupHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View local setup in the README ↗
+              </a>
+            </div>
+          ) : null}
         </div>
+
+        {project.architecture ? (
+          <figure className="mt-8 border-t border-zinc-800 pt-7">
+            <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+                  Architecture overview
+                </p>
+                <p className="mt-2 text-sm text-zinc-400">
+                  How the application, delivery workflow, and AWS runtime fit
+                  together.
+                </p>
+              </div>
+              <a
+                className="text-sm font-semibold text-sky-300 underline decoration-sky-300/40 underline-offset-4 transition-colors hover:text-white"
+                href={project.architecture.src}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open full-size diagram ↗
+              </a>
+            </div>
+            <div className="mt-5 overflow-hidden rounded-lg border border-zinc-800 bg-[#0b1220] p-2 sm:p-3">
+              <Image
+                src={project.architecture.src}
+                width={1400}
+                height={900}
+                sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(100vw - 5rem), 1024px"
+                className="h-auto w-full"
+                alt={project.architecture.alt}
+                unoptimized
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-zinc-500">
+              {project.architecture.caption}
+            </figcaption>
+          </figure>
+        ) : null}
 
         {project.technologyGroups ? (
           <div className="mt-8 grid gap-5 border-t border-zinc-800 pt-7 sm:grid-cols-2">
