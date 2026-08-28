@@ -59,28 +59,28 @@
     <circle cx="105" cy="220" r="22" fill="#93c5fd"/>
     <text x="105" y="220" class="step">1</text>
     <text x="145" y="226" class="card-title">Prerequisites</text>
-    <text x="100" y="264" class="card-text">AWS account, region, quotas and naming</text>
-    <text x="100" y="289" class="card-text">GitHub repository, GHCR and optional Route 53 domain</text>
-    <text x="100" y="314" class="card-text">Runner with AWS CLI, Terraform and kubectl</text>
+    <text x="100" y="264" class="card-text">AWS account, region, quotas + naming</text>
+    <text x="100" y="289" class="card-text">GitHub repo, GHCR + optional Route 53</text>
+    <text x="100" y="314" class="card-text">Runner with AWS CLI, Terraform + kubectl</text>
   </g>
   <g>
     <rect filter="url(#shadow)" x="535" y="185" width="430" height="160" rx="18" fill="url(#prepare)"/>
     <circle cx="570" cy="220" r="22" fill="#93c5fd"/>
     <text x="570" y="220" class="step">2</text>
     <text x="610" y="226" class="card-title">Trust + access</text>
-    <text x="565" y="264" class="card-text">GitHub Actions OIDC provider</text>
-    <text x="565" y="289" class="card-text">and restricted IAM role</text>
-    <text x="565" y="314" class="card-text">Trust only the repository and approved ref/environment</text>
-    <text x="565" y="339" class="card-text">Protected GitHub production Environment with reviewers</text>
+    <text x="565" y="264" class="card-text">GitHub Actions OIDC + restricted IAM</text>
+    <text x="565" y="289" class="card-text">Repository + approved ref only</text>
+    <text x="565" y="314" class="card-text">Protected production Environment</text>
+    <text x="565" y="339" class="card-text">Required reviewers</text>
   </g>
   <g>
     <rect filter="url(#shadow)" x="1000" y="185" width="430" height="160" rx="18" fill="url(#prepare)"/>
     <circle cx="1035" cy="220" r="22" fill="#93c5fd"/>
     <text x="1035" y="220" class="step">3</text>
     <text x="1075" y="226" class="card-title">Settings + secrets</text>
-    <text x="1030" y="264" class="card-text">Production profile, cluster settings and API CIDRs</text>
-    <text x="1030" y="289" class="card-text">MongoDB credentials, TLS, backup + observability</text>
-    <text x="1030" y="314" class="card-text">Redis and notification Secrets when configured</text>
+    <text x="1030" y="264" class="card-text">Production profile, cluster settings + CIDRs</text>
+    <text x="1030" y="289" class="card-text">MongoDB credentials, TLS + observability</text>
+    <text x="1030" y="314" class="card-text">Redis + notifications when configured</text>
   </g>
   <path d="M505 265 L525 265" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
   <path d="M970 265 L990 265" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
@@ -91,18 +91,18 @@
     <circle cx="105" cy="455" r="22" fill="#67e8f9"/>
     <text x="105" y="455" class="step">4</text>
     <text x="145" y="461" class="card-title">Build + publish</text>
-    <text x="100" y="499" class="card-text">Test frontend and API, then build both images</text>
-    <text x="100" y="524" class="card-text">Scan, generate SBOM/provenance and sign with cosign</text>
-    <text x="100" y="549" class="card-text">Publish immutable commit-SHA images to GHCR</text>
+    <text x="100" y="499" class="card-text">Test frontend + API, then build images</text>
+    <text x="100" y="524" class="card-text">Scan SBOM/provenance + sign with cosign</text>
+    <text x="100" y="549" class="card-text">Publish immutable SHA-tagged images to GHCR</text>
   </g>
   <g>
     <rect filter="url(#shadow)" x="535" y="420" width="430" height="160" rx="18" fill="url(#delivery)"/>
     <circle cx="570" cy="455" r="22" fill="#67e8f9"/>
     <text x="570" y="455" class="step">5</text>
     <text x="610" y="461" class="card-title">Bootstrap state</text>
-    <text x="565" y="499" class="card-text">Create or reuse private S3 state + DynamoDB lock</text>
-    <text x="565" y="524" class="card-text">Enable encryption, versioning, transport protection</text>
-    <text x="565" y="549" class="card-text">+ PITR</text>
+    <text x="565" y="499" class="card-text">Create/reuse private S3 state + lock</text>
+    <text x="565" y="524" class="card-text">Encryption, versioning + transport protection</text>
+    <text x="565" y="549" class="card-text">PITR enabled</text>
     <text x="565" y="574" class="card-text">Keep state, plans and credentials outside Git</text>
   </g>
   <g>
@@ -111,12 +111,12 @@
     <text x="1035" y="455" class="step">6</text>
     <text x="1075" y="461" class="card-title">Terraform apply</text>
     <text x="1030" y="499" class="card-text">Plan → production approval → reviewed apply</text>
-    <text x="1030" y="524" class="card-text">Create VPC, EKS nodes, EBS CSI, IRSA + KMS/logs</text>
-    <text x="1030" y="549" class="card-text">Create storage, secret wiring and</text>
-    <text x="1030" y="574" class="card-text">environment outputs</text>
+    <text x="1030" y="524" class="card-text">Create VPC, EKS nodes, EBS CSI + IRSA</text>
+    <text x="1030" y="549" class="card-text">KMS/logs, storage and secret wiring</text>
+    <text x="1030" y="574" class="card-text">Environment outputs</text>
   </g>
   <path d="M1215 345 C1215 350 1000 365 760 365 C520 365 240 365 40 365 L40 500 L70 500" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <text x="760" y="355" class="flow-label" text-anchor="middle">continue</text>
+  <text x="760" y="383" class="flow-label" text-anchor="middle">continue</text>
   <path d="M505 500 L525 500" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M970 500 L990 500" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
 
@@ -126,18 +126,17 @@
     <circle cx="105" cy="690" r="22" fill="#67e8f9"/>
     <text x="105" y="690" class="step">7</text>
     <text x="145" y="696" class="card-title">Bootstrap Argo CD</text>
-    <text x="100" y="734" class="card-text">Install Argo CD and External Secrets integration</text>
-    <text x="100" y="759" class="card-text">Register the root application for the chosen Git ref</text>
-    <text x="100" y="784" class="card-text">Inject environment-specific values</text>
-    <text x="100" y="809" class="card-text">without committing them</text>
+    <text x="100" y="734" class="card-text">Install Argo CD + External Secrets</text>
+    <text x="100" y="759" class="card-text">Register root app and inject</text>
+    <text x="100" y="784" class="card-text">environment-specific values outside Git</text>
   </g>
   <g>
     <rect filter="url(#shadow)" x="535" y="655" width="430" height="160" rx="18" fill="url(#runtime)"/>
     <circle cx="570" cy="690" r="22" fill="#67e8f9"/>
     <text x="570" y="690" class="step">8</text>
     <text x="610" y="696" class="card-title">Reconcile EKS runtime</text>
-    <text x="565" y="734" class="card-text">NGINX NLB, cert-manager + MongoDB Operator</text>
-    <text x="565" y="759" class="card-text">Helm release, Redis + production guardrails</text>
+    <text x="565" y="734" class="card-text">NGINX NLB + cert-manager + MongoDB</text>
+    <text x="565" y="759" class="card-text">Operator, Helm release + Redis guardrails</text>
     <text x="565" y="784" class="card-text">Prometheus, Grafana, Loki/Alloy + Tempo</text>
   </g>
   <g>
@@ -145,15 +144,15 @@
     <circle cx="1035" cy="690" r="22" fill="#67e8f9"/>
     <text x="1035" y="690" class="step">9</text>
     <text x="1075" y="696" class="card-title">DNS + verify</text>
-    <text x="1030" y="730" class="card-text">Point Route 53 to NLB; verify ACME + HTTPS</text>
+    <text x="1030" y="730" class="card-text">Route 53 → NLB; verify ACME + HTTPS</text>
     <text x="1030" y="750" class="card-text">Check Argo, probes, MongoDB + WebSockets</text>
     <text x="1030" y="770" class="card-text">Confirm HPA/PDB and production guardrails</text>
-    <text x="1030" y="790" class="card-text">Test backup/restore + alert notification</text>
+    <text x="1030" y="790" class="card-text">Test backup/restore + alerting</text>
   </g>
   <path d="M505 735 L525 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M970 735 L990 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M1215 580 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 735 L70 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <text x="760" y="590" class="flow-label" text-anchor="middle">continue</text>
+  <text x="760" y="618" class="flow-label" text-anchor="middle">continue</text>
   <path d="M1215 815 L1215 850" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
   <text x="1230" y="830" class="flow-label">gate</text>
 

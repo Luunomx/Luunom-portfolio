@@ -156,21 +156,21 @@
   <text x="912" y="425" class="small flow-label">image pull</text>
 
   <g>
-    <rect filter="url(#shadow)" x="980" y="825" width="210" height="115" rx="18" fill="url(#security)"/>
-    <text x="1010" y="865" class="box-title">AWS Secrets</text>
-    <text x="1010" y="894" class="box-text">Secrets Manager</text>
-    <text x="1010" y="921" class="box-text">Mongo credentials</text>
+    <rect filter="url(#shadow)" x="980" y="835" width="210" height="105" rx="18" fill="url(#security)"/>
+    <text x="1010" y="870" class="box-title">AWS Secrets</text>
+    <text x="1010" y="899" class="box-text">Secrets Manager</text>
+    <text x="1010" y="926" class="box-text">Mongo credentials</text>
   </g>
   <g>
-    <rect filter="url(#shadow)" x="1220" y="825" width="210" height="115" rx="18" fill="#475569"/>
-    <text x="1250" y="865" class="box-title">Terraform</text>
-    <text x="1250" y="894" class="box-text">VPC + EKS + IRSA/KMS</text>
-    <text x="1250" y="921" class="box-text">audit logs + Access Entries</text>
+    <rect filter="url(#shadow)" x="1220" y="835" width="210" height="105" rx="18" fill="#475569"/>
+    <text x="1250" y="870" class="box-title">Terraform</text>
+    <text x="1250" y="899" class="box-text">VPC + EKS + IRSA/KMS</text>
+    <text x="1250" y="926" class="box-text">audit logs + Access Entries</text>
   </g>
-  <path d="M1085 817 L1085 795" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
-  <text x="1100" y="806" class="small">secret wiring</text>
-  <path d="M1325 817 L1325 795" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
-  <text x="1338" y="806" class="small">provisions</text>
+  <path d="M1085 827 L1085 810" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <text x="1100" y="827" class="small">secret wiring</text>
+  <path d="M1325 827 L1325 810" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <text x="1338" y="827" class="small">provisions</text>
 
   <rect x="70" y="825" width="830" height="115" rx="18" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
   <text x="100" y="863" class="box-title">What this template covers</text>

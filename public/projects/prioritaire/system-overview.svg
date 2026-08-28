@@ -72,8 +72,8 @@
   <g>
     <rect filter="url(#shadow)" x="70" y="145" width="1360" height="110" rx="16" fill="#334155" stroke="#64748b" stroke-width="2"/>
     <text x="100" y="181" class="box-title">System purpose</text>
-    <text x="100" y="209" class="purpose-text">A logistics booking and operations app connecting authenticated company users to pricing, booking, order status,</text>
-    <text x="100" y="233" class="purpose-text">tracking, admin views and external transport systems through a controlled backend.</text>
+    <text x="100" y="209" class="purpose-text">A logistics booking and operations app connecting authenticated company users to pricing, booking,</text>
+    <text x="100" y="233" class="purpose-text">order status, tracking, admin views and external transport systems through a controlled backend.</text>
   </g>
 
   <text x="70" y="275" class="section">1 · PRODUCT REQUEST FLOW</text>
@@ -204,9 +204,9 @@
     <text x="1015" y="907" class="box-title" font-size="16">Terraform IaC</text>
     <text x="1015" y="930" class="small">manage RDS, App Runner, S3</text>
     <text x="1015" y="947" class="small">bootstrap jobs</text>
-    <text x="1300" y="898" class="small">Environment-aware</text>
-    <text x="1300" y="920" class="small">schema and deploy</text>
-    <text x="1300" y="942" class="small">controls</text>
+    <text x="1295" y="898" class="small" font-size="13">Env-aware</text>
+    <text x="1295" y="920" class="small" font-size="13">schema + deploy</text>
+    <text x="1295" y="942" class="small" font-size="13">controls</text>
   </g>
   <path d="M626 914 L644 914" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
   <path d="M966 914 L984 914" fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
@@ -240,8 +240,8 @@
 
     <rect x="960" y="1140" width="190" height="70" rx="12" fill="#451a03"/>
     <text x="980" y="1167" class="box-title" font-size="16">Observability</text>
-    <text x="980" y="1191" class="box-text">CloudWatch logs/alarms</text>
-    <text x="980" y="1207" class="small">OTel maturity path</text>
+    <text x="980" y="1191" class="box-text">CloudWatch logs</text>
+    <text x="980" y="1207" class="small">alarms + OTel path</text>
 
     <rect x="1175" y="1140" width="225" height="70" rx="12" fill="#1e293b"/>
     <text x="1195" y="1167" class="box-title" font-size="16">Environments</text>
