@@ -82,7 +82,7 @@ const projectCases: ProjectCase[] = [
         caption:
           "Sanitized architecture overview — no secrets, live data, or private endpoints",
         width: 1500,
-        height: 1240,
+        height: 1020,
       },
     ],
     accentBorder: "border-emerald-400/60",
