@@ -18,6 +18,7 @@ type ProjectCase = {
   technicalEvidence: string[];
   technologyGroups?: { label: string; items: string[] }[];
   repositoryHref?: string;
+  websiteHref?: string;
   localSetupHref?: string;
   architecture?: {
     src: string;
@@ -127,8 +128,8 @@ const projectCases: ProjectCase[] = [
   },
   {
     title: "Therapy Practice Website",
-    eyebrow: "Product implementation case",
-    status: "Private repository",
+    eyebrow: "Client website",
+    status: "Client project",
     summary:
       "A client-facing practice website focused on a responsive interface, clear route structure, contact actions, technical SEO, and deployment.",
     contribution:
@@ -148,6 +149,7 @@ const projectCases: ProjectCase[] = [
       "Email, phone, map, and copy interactions",
       "Expo Router, React Native Web, TypeScript, SEO, AWS, and Terraform",
     ],
+    websiteHref: "https://wearelovable.se",
     accentBorder: "border-amber-400/60",
     accentFill: "bg-amber-400",
   },
@@ -441,16 +443,28 @@ function CaseStudy({
             ))}
           </div>
 
-          {project.repositoryHref ? (
+          {project.repositoryHref || project.websiteHref ? (
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
-                href={project.repositoryHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View public repository ↗
-              </a>
+              {project.repositoryHref ? (
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
+                  href={project.repositoryHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View public repository ↗
+                </a>
+              ) : null}
+              {project.websiteHref ? (
+                <a
+                  className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-200"
+                  href={project.websiteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit live website ↗
+                </a>
+              ) : null}
             </div>
           ) : null}
 
