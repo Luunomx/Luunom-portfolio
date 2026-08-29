@@ -191,9 +191,9 @@ const projectCases: ProjectCase[] = [
     eyebrow: "Client website",
     status: "Client project",
     summary:
-      "A client-facing practice website focused on a responsive interface, clear route structure, contact actions, technical SEO, and deployment.",
+      "A client-facing practice website focused on a responsive interface, clear route structure, contact actions, technical SEO, and a low-cost static AWS deployment.",
     contribution:
-      "Built the reusable interface, route structure, responsive navigation, phone and email actions, SEO metadata, robots, sitemap, and deployment workflow.",
+      "Built the reusable interface, route structure, responsive navigation, phone and email actions, SEO metadata, robots, sitemap, and deployment workflow. The current small-traffic AWS setup is approximately $0.70/month, with cost varying by traffic and media delivery.",
     learning:
       "Practised keeping a small customer-facing website clear, maintainable, and easy to use across screen sizes without adding unnecessary complexity.",
     tags: [
@@ -203,13 +203,28 @@ const projectCases: ProjectCase[] = [
       "SEO",
       "AWS",
       "Terraform",
+      "S3",
+      "CloudFront",
     ],
     technicalEvidence: [
       "Responsive navigation and reusable components",
       "Email, phone, map, and copy interactions",
-      "Expo Router, React Native Web, TypeScript, SEO, AWS, and Terraform",
+      "Expo Router, React Native Web, TypeScript, SEO, private S3, CloudFront, and Terraform",
     ],
     websiteHref: "https://wearelovable.se",
+    diagrams: [
+      {
+        title: "Static delivery and request flow",
+        description:
+          "A sanitized view of the separate release path and visitor request path for the client website.",
+        src: "/projects/lovable-webapp/delivery-flow.svg",
+        alt: "Sanitized flow diagram showing a private Expo and React Native Web client website moving through GitHub Actions, Terraform, private S3, CloudFront, Route 53, and the public wearelovable.se domain, with an approximate low AWS cost.",
+        caption:
+          "Private client code · release path + request path · approximately $0.70/month at current small traffic",
+        width: 1500,
+        height: 1130,
+      },
+    ],
     accentBorder: "border-amber-400/60",
     accentFill: "bg-amber-400",
   },
@@ -238,6 +253,19 @@ const projectCases: ProjectCase[] = [
       "Regime-aware strategy routing with specialist playbooks and structured diagnostics",
       "Paper futures execution with position, risk, order, fill, reconnect, and health handling",
       "Historical backtests, cross-venue research, event replay, and headless API/report control",
+    ],
+    diagrams: [
+      {
+        title: "Research and paper-trading flow",
+        description:
+          "A sanitized view of Bot Control, paper and backtest modes, shared strategy execution, runtime evidence, and review outputs.",
+        src: "/projects/bot/research-flow.svg",
+        alt: "Sanitized flow diagram showing a private crypto trading bot workbench moving from Bot Control and configuration through paper, backtest, and replay modes into strategy routing, paper execution, runtime evidence, and research review outputs.",
+        caption:
+          "Private repository · paper and research focused · no live-trading path by default",
+        width: 1500,
+        height: 1190,
+      },
     ],
     accentBorder: "border-rose-400/60",
     accentFill: "bg-rose-400",

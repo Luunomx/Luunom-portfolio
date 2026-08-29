@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1160" viewBox="0 0 1600 1160" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility" role="img" aria-labelledby="title desc">
+  <title id="title">Crypto trading bot research and paper architecture</title>
+  <desc id="desc">A sanitized architecture map of a private BTC futures research and paper-trading workbench. Bot Control and run configuration feed paper, backtest, and event replay modes, which share strategy routing, paper execution, runtime evidence, and human research review. No live-capital path is shown.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="app" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="delivery" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="research" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#164e63"/>
+      <stop offset="1" stop-color="#155e75"/>
+    </linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#92400e"/>
+      <stop offset="1" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+    <marker id="arrow-blue" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#93c5fd"/>
+    </marker>
+    <marker id="arrow-teal" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#67e8f9"/>
+    </marker>
+    <marker id="arrow-amber" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#fcd34d"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+      .section { font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; letter-spacing: 1.5px; }
+      .box-title { font: 700 19px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .box-text { font: 600 15px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .small { font: 600 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .flow-label { stroke: #0f172a; stroke-width: 3px; stroke-linejoin: round; paint-order: stroke fill; }
+      .legend { font: 600 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .chip { font: 700 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #a5f3fc; letter-spacing: .8px; }
+      .mode-title { font: 700 15px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .mode-text { font: 600 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1160" rx="28" fill="url(#bg)"/>
+  <circle cx="1400" cy="100" r="260" fill="#4f46e5" opacity=".12"/>
+  <circle cx="140" cy="1030" r="300" fill="#0891b2" opacity=".10"/>
+
+  <text x="70" y="72" class="title">Crypto trading bot — research and paper architecture</text>
+  <text x="70" y="104" class="subtitle">A paper-first workbench where different research modes share one strategy and evidence boundary.</text>
+  <rect x="1250" y="42" width="280" height="42" rx="12" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <text x="1390" y="68" class="chip" text-anchor="middle">PRIVATE · PAPER / RESEARCH</text>
+
+  <text x="70" y="150" class="section">CONTROL &amp; INPUTS</text>
+  <line x1="70" y1="169" x2="1530" y2="169" stroke="#334155" stroke-width="2"/>
+
+  <g>
+    <rect filter="url(#shadow)" x="70" y="205" width="420" height="180" rx="18" fill="url(#app)"/>
+    <text x="100" y="247" class="box-title">Bot Control + CLI</text>
+    <text x="100" y="278" class="box-text">Start paper, backtest or replay runs</text>
+    <text x="100" y="307" class="box-text">Read status, reports and diagnostics</text>
+    <text x="100" y="336" class="box-text">One active paper run at a time</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="590" y="205" width="420" height="180" rx="18" fill="#334155"/>
+    <text x="620" y="247" class="box-title">Run configuration</text>
+    <text x="620" y="278" class="box-text">Profile, risk and environment settings</text>
+    <text x="620" y="307" class="box-text">Strategy factory + canonical identity</text>
+    <text x="620" y="336" class="box-text">Explicit mode and reproducible inputs</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="1110" y="205" width="420" height="180" rx="18" fill="#334155"/>
+    <text x="1140" y="247" class="box-title">Market data boundaries</text>
+    <text x="1140" y="278" class="box-text">MEXC / Kraken paper streams</text>
+    <text x="1140" y="307" class="box-text">MEXC, Binance and Bybit M1 history</text>
+    <text x="1140" y="336" class="box-text">Captured events for replay parity</text>
+  </g>
+  <path d="M490 295 L576 295" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <text x="533" y="282" class="small flow-label" text-anchor="middle">configure</text>
+
+  <text x="70" y="435" class="section">RUN MODES CONVERGE ON ONE CORE</text>
+  <line x1="70" y1="466" x2="1530" y2="466" stroke="#334155" stroke-width="2"/>
+
+  <g>
+    <rect x="70" y="490" width="450" height="290" rx="20" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+    <text x="100" y="532" class="box-title">Run modes</text>
+    <text x="100" y="558" class="small">Same vocabulary, different evidence</text>
+
+    <rect x="100" y="575" width="390" height="54" rx="12" fill="url(#app)"/>
+    <text x="122" y="598" class="mode-title">PAPER</text>
+    <text x="122" y="618" class="mode-text">Configured public futures stream</text>
+
+    <rect x="100" y="641" width="390" height="54" rx="12" fill="url(#research)"/>
+    <text x="122" y="664" class="mode-title">BACKTEST</text>
+    <text x="122" y="684" class="mode-text">Historical M1 simulation</text>
+
+    <rect x="100" y="707" width="390" height="54" rx="12" fill="#334155"/>
+    <text x="122" y="730" class="mode-title">EVENT REPLAY</text>
+    <text x="122" y="750" class="mode-text">Captured events for parity investigation</text>
+  </g>
+
+  <g>
+    <rect x="590" y="490" width="480" height="290" rx="20" fill="url(#delivery)"/>
+    <text x="620" y="532" class="box-title">Shared strategy + paper execution</text>
+
+    <rect x="620" y="560" width="420" height="54" rx="12" fill="#0f766e" stroke="#67e8f9" stroke-opacity=".35"/>
+    <text x="645" y="584" class="mode-title">1 · Normalize inputs</text>
+    <text x="645" y="604" class="mode-text">Source, timeframe and identity</text>
+    <path d="M830 614 L830 628" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+
+    <rect x="620" y="634" width="420" height="54" rx="12" fill="#0f766e" stroke="#67e8f9" stroke-opacity=".35"/>
+    <text x="645" y="658" class="mode-title">2 · Classify + route</text>
+    <text x="645" y="678" class="mode-text">Regime classifier → specialist playbook</text>
+    <path d="M830 688 L830 702" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+
+    <rect x="620" y="708" width="420" height="54" rx="12" fill="#0f766e" stroke="#67e8f9" stroke-opacity=".35"/>
+    <text x="645" y="732" class="mode-title">3 · Guard execution</text>
+    <text x="645" y="752" class="mode-text">Adapter → order router → exit guard</text>
+  </g>
+
+  <g>
+    <rect x="1140" y="490" width="390" height="290" rx="20" fill="#164e63" stroke="#67e8f9" stroke-width="2"/>
+    <text x="1170" y="532" class="box-title">Evidence boundary</text>
+    <text x="1170" y="575" class="box-text">Trades, signals and orders</text>
+    <text x="1170" y="604" class="box-text">Runtime summaries + diagnostics</text>
+    <text x="1170" y="633" class="box-text">CSV compatibility + typed dual-write</text>
+    <text x="1170" y="662" class="box-text">Provenance stays with each run</text>
+    <text x="1170" y="722" class="small">No live-capital route by default</text>
+  </g>
+
+  <path d="M800 385 L800 447 L295 447 L295 480" fill="none" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <text x="555" y="435" class="small flow-label" text-anchor="middle">select mode</text>
+  <path d="M1110 385 C1110 420 1030 440 985 480" fill="none" stroke="#93c5fd" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow-blue)"/>
+  <text x="1080" y="433" class="small flow-label" text-anchor="middle">market input</text>
+  <path d="M520 635 L576 635" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <text x="548" y="622" class="small flow-label" text-anchor="middle">shared core</text>
+  <path d="M1070 635 L1126 635" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <text x="1098" y="622" class="small flow-label" text-anchor="middle">record</text>
+
+  <text x="70" y="845" class="section">READ MODEL &amp; HUMAN REVIEW</text>
+  <line x1="70" y1="864" x2="1530" y2="864" stroke="#334155" stroke-width="2"/>
+
+  <g>
+    <rect filter="url(#shadow)" x="70" y="900" width="420" height="160" rx="18" fill="#334155"/>
+    <text x="100" y="942" class="box-title">Bot Control read model</text>
+    <text x="100" y="973" class="box-text">Run status + report endpoints</text>
+    <text x="100" y="1002" class="box-text">Research replay catalog and replay</text>
+    <text x="100" y="1031" class="small">Jarvis reads through the API</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="590" y="900" width="420" height="160" rx="18" fill="#334155"/>
+    <text x="620" y="942" class="box-title">Research review outputs</text>
+    <text x="620" y="973" class="box-text">Backtests, paper sessions and boards</text>
+    <text x="620" y="1002" class="box-text">Diagnostics, provenance and metadata</text>
+    <text x="620" y="1031" class="small">Evidence for a human decision</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="1110" y="900" width="420" height="160" rx="18" fill="url(#gate)"/>
+    <text x="1140" y="942" class="box-title">Human decision boundary</text>
+    <text x="1140" y="973" class="box-text">Research result ≠ live-trading proof</text>
+    <text x="1140" y="1002" class="box-text">Review strategy, risk and provenance</text>
+    <text x="1140" y="1031" class="small">No automatic promotion is implied</text>
+  </g>
+  <path d="M490 980 L576 980" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M1010 980 L1096 980" fill="none" stroke="#fcd34d" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-amber)"/>
+
+  <line x1="70" y1="1100" x2="100" y2="1100" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <text x="115" y="1105" class="legend">control / research flow</text>
+  <line x1="360" y1="1100" x2="390" y2="1100" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <text x="405" y="1105" class="legend">shared runtime / evidence</text>
+  <line x1="720" y1="1100" x2="750" y2="1100" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <text x="765" y="1105" class="legend">human review boundary</text>
+  <text x="1530" y="1105" class="legend" text-anchor="end">Paper/research workbench · no live-capital path shown</text>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility" role="img" aria-labelledby="title desc">
+  <title id="title">Lovable static webapp release and request architecture</title>
+  <desc id="desc">A sanitized architecture map of a private client website built with Expo Router and React Native Web. The release path moves through GitHub Actions into static AWS hosting, while the public request path moves through Route 53 and CloudFront to a private S3 origin. The current small-traffic AWS footprint costs approximately 0.70 US dollars per month.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="app" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="delivery" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="runtime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#164e63"/>
+      <stop offset="1" stop-color="#155e75"/>
+    </linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#92400e"/>
+      <stop offset="1" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+    <marker id="arrow-blue" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#93c5fd"/>
+    </marker>
+    <marker id="arrow-teal" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#67e8f9"/>
+    </marker>
+    <marker id="arrow-amber" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#fcd34d"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
+      .section { font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; letter-spacing: 1.5px; }
+      .box-title { font: 700 19px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .box-text { font: 600 15px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
+      .small { font: 600 14px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .flow-label { stroke: #0f172a; stroke-width: 3px; stroke-linejoin: round; paint-order: stroke fill; }
+      .legend { font: 600 13px Inter, ui-sans-serif, system-ui, sans-serif; fill: #e2e8f0; }
+      .chip { font: 700 12px Inter, ui-sans-serif, system-ui, sans-serif; fill: #a5f3fc; letter-spacing: .8px; }
+      .cost { font: 700 28px Inter, ui-sans-serif, system-ui, sans-serif; fill: #fcd34d; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" rx="28" fill="url(#bg)"/>
+  <circle cx="1400" cy="100" r="260" fill="#4f46e5" opacity=".12"/>
+  <circle cx="140" cy="980" r="300" fill="#0891b2" opacity=".10"/>
+
+  <text x="70" y="72" class="title">Lovable webapp — release and request architecture</text>
+  <text x="70" y="104" class="subtitle">A private static client site with a small AWS edge footprint and no application compute.</text>
+  <rect x="1250" y="42" width="280" height="42" rx="12" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <text x="1390" y="68" class="chip" text-anchor="middle">CLIENT PROJECT · PRIVATE CODE</text>
+
+  <text x="70" y="150" class="section">RELEASE PATH · PRIVATE SOURCE TO STATIC HOSTING</text>
+  <line x1="70" y1="169" x2="1530" y2="169" stroke="#334155" stroke-width="2"/>
+
+  <g>
+    <rect filter="url(#shadow)" x="70" y="205" width="320" height="180" rx="18" fill="url(#app)"/>
+    <text x="100" y="247" class="box-title">Private source repo</text>
+    <text x="100" y="278" class="box-text">Expo Router + React Native Web</text>
+    <text x="100" y="307" class="box-text">TypeScript and responsive routes</text>
+    <text x="100" y="336" class="box-text">Feature → dev → main promotion</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="430" y="205" width="320" height="180" rx="18" fill="#334155"/>
+    <text x="460" y="247" class="box-title">GitHub Actions CI</text>
+    <text x="460" y="278" class="box-text">npm ci + typecheck + lint</text>
+    <text x="460" y="307" class="box-text">Static web export + SEO files</text>
+    <text x="460" y="336" class="box-text">Pull-request checks first</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="790" y="205" width="320" height="180" rx="18" fill="url(#delivery)"/>
+    <text x="820" y="247" class="box-title">Deployment workflow</text>
+    <text x="820" y="278" class="box-text">Branch-scoped OIDC access</text>
+    <text x="820" y="307" class="box-text">Export, upload and invalidate</text>
+    <text x="820" y="336" class="box-text">Verify production HTML headers</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="1150" y="205" width="320" height="180" rx="18" fill="#334155"/>
+    <text x="1180" y="247" class="box-title">Private S3 origin</text>
+    <text x="1180" y="278" class="box-text">Static HTML, JS, images and video</text>
+    <text x="1180" y="307" class="box-text">Origin access stays private</text>
+    <text x="1180" y="336" class="box-text">No server runtime required</text>
+  </g>
+  <path d="M390 295 L416 295" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M750 295 L776 295" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <path d="M1110 295 L1136 295" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <text x="403" y="282" class="small flow-label" text-anchor="middle">checks</text>
+  <text x="763" y="282" class="small flow-label" text-anchor="middle">deploy</text>
+  <text x="1123" y="282" class="small flow-label" text-anchor="middle">publish</text>
+
+  <g>
+    <rect x="70" y="420" width="1400" height="100" rx="18" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="457" class="box-title">Terraform-managed AWS foundation</text>
+    <text x="100" y="483" class="small">Supporting infrastructure, separate from the visitor request path</text>
+    <rect x="700" y="442" width="112" height="42" rx="12" fill="#78350f"/>
+    <text x="756" y="468" class="small" text-anchor="middle">S3</text>
+    <rect x="827" y="442" width="140" height="42" rx="12" fill="#164e63"/>
+    <text x="897" y="468" class="small" text-anchor="middle">CloudFront</text>
+    <rect x="982" y="442" width="112" height="42" rx="12" fill="#164e63"/>
+    <text x="1038" y="468" class="small" text-anchor="middle">OAC</text>
+    <rect x="1109" y="442" width="130" height="42" rx="12" fill="#334155"/>
+    <text x="1174" y="468" class="small" text-anchor="middle">Route 53</text>
+    <rect x="1254" y="442" width="112" height="42" rx="12" fill="#334155"/>
+    <text x="1310" y="468" class="small" text-anchor="middle">ACM</text>
+  </g>
+  <path d="M1310 385 L1310 412" fill="none" stroke="#fcd34d" stroke-width="3" stroke-dasharray="7 7"/>
+
+  <text x="70" y="575" class="section">REQUEST PATH · PUBLIC EDGE TO PRIVATE ORIGIN</text>
+  <line x1="70" y1="594" x2="1530" y2="594" stroke="#334155" stroke-width="2"/>
+
+  <g>
+    <rect filter="url(#shadow)" x="70" y="630" width="430" height="190" rx="18" fill="url(#app)"/>
+    <text x="100" y="674" class="box-title">Visitor / browser</text>
+    <text x="100" y="705" class="box-text">HTTPS request to wearelovable.se</text>
+    <text x="100" y="734" class="box-text">Localized routes and static pages</text>
+    <text x="100" y="763" class="box-text">Images and hero video as assets</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="585" y="630" width="430" height="190" rx="18" fill="url(#runtime)"/>
+    <text x="615" y="674" class="box-title">Route 53 + CloudFront</text>
+    <text x="615" y="705" class="box-text">DNS + TLS at the edge</text>
+    <text x="615" y="734" class="box-text">Clean URLs and cache control</text>
+    <text x="615" y="763" class="box-text">Origin access keeps S3 private</text>
+  </g>
+  <g>
+    <rect filter="url(#shadow)" x="1100" y="630" width="370" height="190" rx="18" fill="#334155"/>
+    <text x="1130" y="674" class="box-title">Private S3 origin</text>
+    <text x="1130" y="705" class="box-text">Static objects served at the edge</text>
+    <text x="1130" y="734" class="box-text">No EC2, RDS or Lambda required</text>
+    <text x="1130" y="763" class="box-text">Only CloudFront reads the origin</text>
+  </g>
+  <path d="M500 725 L571 725" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-blue)"/>
+  <path d="M1015 725 L1086 725" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-teal)"/>
+  <text x="535" y="712" class="small flow-label" text-anchor="middle">HTTPS</text>
+  <text x="1050" y="712" class="small flow-label" text-anchor="middle">origin read</text>
+
+  <g>
+    <rect x="70" y="870" width="1400" height="105" rx="18" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="912" class="box-title">Low-cost AWS footprint</text>
+    <text x="465" y="925" class="cost">≈ $0.70 / month</text>
+    <text x="850" y="912" class="small">Current small-traffic profile</text>
+    <text x="850" y="939" class="small">Actual cost varies with traffic and video delivery</text>
+  </g>
+  <text x="1530" y="1030" class="legend" text-anchor="end">Static site · private code · public website</text>
+</svg>
