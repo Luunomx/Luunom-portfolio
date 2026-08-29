@@ -68,9 +68,9 @@
   <text x="70" y="72" class="title">BulletinBoard architecture</text>
   <text x="70" y="104" class="subtitle">A production-minded template from local development to GitOps delivery on AWS EKS.</text>
 
-  <text x="70" y="164" class="section">APPLICATION</text>
-  <text x="500" y="164" class="section">DELIVERY / GITOPS</text>
-  <text x="980" y="164" class="section">RUNTIME / AWS</text>
+  <text x="235" y="164" class="section" text-anchor="middle">APPLICATION</text>
+  <text x="700" y="164" class="section" text-anchor="middle">DELIVERY / GITOPS</text>
+  <text x="1205" y="164" class="section" text-anchor="middle">RUNTIME / AWS</text>
 
   <g>
     <rect filter="url(#shadow)" x="70" y="195" width="330" height="145" rx="18" fill="url(#app)"/>
