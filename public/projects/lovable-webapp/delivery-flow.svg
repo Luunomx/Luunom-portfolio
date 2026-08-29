@@ -110,7 +110,7 @@
     <rect x="1254" y="442" width="112" height="42" rx="12" fill="#334155"/>
     <text x="1310" y="468" class="small" text-anchor="middle">ACM</text>
   </g>
-  <path d="M1310 385 L1310 412" fill="none" stroke="#fcd34d" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M1310 385 L1310 406" fill="none" stroke="#fcd34d" stroke-width="3" stroke-dasharray="7 7" marker-end="url(#arrow-amber)"/>
 
   <text x="70" y="575" class="section">REQUEST PATH · PUBLIC EDGE TO PRIVATE ORIGIN</text>
   <line x1="70" y1="594" x2="1530" y2="594" stroke="#334155" stroke-width="2"/>
