@@ -31,6 +31,15 @@
     <marker id="arrow-muted" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="14" refY="5" orient="auto">
       <path d="M0,0 L0,10 L14,5 z" fill="#93c5fd"/>
     </marker>
+    <marker id="side-arrow" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#67e8f9"/>
+    </marker>
+    <marker id="side-arrow-muted" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#93c5fd"/>
+    </marker>
+    <marker id="side-arrow-amber" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L14,5 z" fill="#fcd34d"/>
+    </marker>
     <style>
       .title { font: 700 34px Inter, ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; }
       .subtitle { font: 400 17px Inter, ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; }
@@ -82,8 +91,8 @@
     <text x="1030" y="289" class="card-text">MongoDB credentials, TLS + observability</text>
     <text x="1030" y="314" class="card-text">Redis + notifications when configured</text>
   </g>
-  <path d="M503 265 L532 265" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-muted)"/>
-  <path d="M968 265 L997 265" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow-muted)"/>
+  <path d="M503 265 L518 265" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow-muted)"/>
+  <path d="M968 265 L983 265" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow-muted)"/>
 
   <text x="70" y="395" class="phase">PHASE 2 · PROVISION</text>
   <g>
@@ -115,10 +124,10 @@
     <text x="1030" y="549" class="card-text">KMS/logs, storage and secret wiring</text>
     <text x="1030" y="574" class="card-text">Environment outputs</text>
   </g>
-  <path d="M1215 345 C1215 350 1000 365 760 365 C520 365 240 365 40 365 L40 500 L70 500" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="butt" marker-end="url(#arrow)"/>
+  <path d="M1215 345 C1215 350 1000 365 760 365 C520 365 240 365 40 365 L40 500 L56 500" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
   <text x="760" y="383" class="flow-label" text-anchor="middle">continue</text>
-  <path d="M503 500 L532 500" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow)"/>
-  <path d="M968 500 L997 500" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow)"/>
+  <path d="M503 500 L518 500" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
+  <path d="M968 500 L983 500" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
 
   <text x="70" y="630" class="phase">PHASE 3 · RECONCILE + VERIFY</text>
   <g>
@@ -149,11 +158,11 @@
     <text x="1030" y="770" class="card-text">Confirm HPA/PDB and production guardrails</text>
     <text x="1030" y="790" class="card-text">Test backup/restore + alerting</text>
   </g>
-  <path d="M503 735 L532 735" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow)"/>
-  <path d="M968 735 L997 735" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow)"/>
-  <path d="M1215 580 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 735 L70 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="butt" marker-end="url(#arrow)"/>
+  <path d="M503 735 L518 735" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
+  <path d="M968 735 L983 735" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
+  <path d="M1215 580 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 735 L56 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="butt" marker-end="url(#side-arrow)"/>
   <text x="760" y="618" class="flow-label" text-anchor="middle">continue</text>
-  <path d="M1215 815 C1215 825 1000 840 760 840 C520 840 240 840 40 840 L40 940 L70 940" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
+  <path d="M1215 815 C1215 825 1000 840 760 840 C520 840 240 840 40 840 L40 940 L56 940" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#side-arrow-amber)"/>
   <text x="760" y="830" class="flow-label" text-anchor="middle">gate</text>
 
   <g>
@@ -172,11 +181,11 @@
     <text x="1090" y="1004" class="footer-text" text-anchor="middle">Monitor, upgrade, back up, restore and record operational evidence</text>
   </g>
 
-  <line x1="70" y1="1090" x2="100" y2="1090" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-muted)"/>
+  <line x1="70" y1="1090" x2="100" y2="1090" stroke="#93c5fd" stroke-width="3" marker-end="url(#side-arrow-muted)"/>
   <text x="115" y="1095" class="legend">prepare / access</text>
-  <line x1="300" y1="1090" x2="330" y2="1090" stroke="#67e8f9" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="300" y1="1090" x2="330" y2="1090" stroke="#67e8f9" stroke-width="3" marker-end="url(#side-arrow)"/>
   <text x="345" y="1095" class="legend">automated delivery</text>
-  <line x1="560" y1="1090" x2="590" y2="1090" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
+  <line x1="560" y1="1090" x2="590" y2="1090" stroke="#fcd34d" stroke-width="3" marker-end="url(#side-arrow-amber)"/>
   <text x="605" y="1095" class="legend">production gate / operator decision</text>
   <text x="1430" y="1095" class="legend" text-anchor="end">Template flow · review every environment-specific value</text>
 </svg>
