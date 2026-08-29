@@ -153,8 +153,8 @@
   <path d="M968 735 L997 735" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="butt" marker-end="url(#arrow)"/>
   <path d="M1215 580 C1215 585 1000 600 760 600 C520 600 240 600 40 600 L40 735 L70 735" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="butt" marker-end="url(#arrow)"/>
   <text x="760" y="618" class="flow-label" text-anchor="middle">continue</text>
-  <path d="M1215 815 L1215 850" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
-  <text x="1230" y="830" class="flow-label">gate</text>
+  <path d="M1215 815 C1215 825 1000 840 760 840 C520 840 240 840 40 840 L40 940 L70 940" fill="none" stroke="#fcd34d" stroke-width="3" marker-end="url(#arrow-muted)"/>
+  <text x="760" y="830" class="flow-label" text-anchor="middle">gate</text>
 
   <g>
     <rect filter="url(#shadow)" x="70" y="865" width="1360" height="190" rx="20" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
@@ -166,10 +166,10 @@
     <text x="100" y="982" class="footer-text">Auth/moderation · HTTPS/WAF · private operators · Redis scale test</text>
     <text x="100" y="1007" class="footer-text">Restore evidence/RPO/RTO · actionable alerts · signed-image admission</text>
     <text x="100" y="1032" class="footer-text">NetworkPolicies · strict Pod Security · secret rotation · runbooks</text>
-    <text x="800" y="956" class="footer-title">After go-live</text>
-    <text x="800" y="982" class="footer-text">App push → publish-images → GitOps SHA → Argo CD rollout</text>
-    <text x="800" y="1007" class="footer-text">Infra change → Terraform plan → approval → idempotent apply</text>
-    <text x="800" y="1032" class="footer-text">Monitor, upgrade, back up, restore and record operational evidence</text>
+    <text x="1090" y="926" class="footer-title" text-anchor="middle">After go-live</text>
+    <text x="1090" y="952" class="footer-text" text-anchor="middle">App push → publish-images → GitOps SHA → Argo CD rollout</text>
+    <text x="1090" y="978" class="footer-text" text-anchor="middle">Infra change → Terraform plan → approval → idempotent apply</text>
+    <text x="1090" y="1004" class="footer-text" text-anchor="middle">Monitor, upgrade, back up, restore and record operational evidence</text>
   </g>
 
   <line x1="70" y1="1090" x2="100" y2="1090" stroke="#93c5fd" stroke-width="3" marker-end="url(#arrow-muted)"/>
