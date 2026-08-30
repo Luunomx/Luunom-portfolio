@@ -74,8 +74,8 @@
   <text x="70" y="127" class="subtitle">persistent state, AWS runtime and CI/CD.</text>
   <g>
     <rect x="1080" y="42" width="350" height="66" rx="14" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
-    <text x="1100" y="70" class="chip">INTERVIEW-SAFE · SANITIZED VIEW</text>
-    <text x="1100" y="92" class="small">No secrets, live data or private endpoints</text>
+    <text x="1100" y="70" class="chip">SYSTEM ARCHITECTURE</text>
+    <text x="1100" y="92" class="small">Application · integrations · AWS runtime</text>
   </g>
 
   <g>

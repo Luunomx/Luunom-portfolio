@@ -345,10 +345,7 @@ button:focus-visible,
     animation: fade-up 520ms ease both;
   }
 
-  main article:hover,
-  main a.rounded-md:hover,
-  main div.rounded-md.border:hover,
-  main li.rounded-md:hover {
+  main a.rounded-md:hover {
     border-color: var(--line-active);
     box-shadow: 0 16px 38px var(--shadow-soft);
     transform: translateY(-2px);
