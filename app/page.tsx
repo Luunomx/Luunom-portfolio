@@ -605,11 +605,14 @@ function CaseStudy({
                         {diagram.description}
                       </span>
                     </span>
-                    <span
-                      className="diagram-disclosure__icon shrink-0 text-2xl font-light leading-none text-sky-300"
-                      aria-hidden="true"
-                    >
-                      +
+                    <span className="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-semibold text-sky-300">
+                      <span>View diagram</span>
+                      <span
+                        className="diagram-disclosure__icon text-2xl font-light leading-none"
+                        aria-hidden="true"
+                      >
+                        +
+                      </span>
                     </span>
                   </summary>
                   <div className="border-t border-zinc-800 px-3 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4">
