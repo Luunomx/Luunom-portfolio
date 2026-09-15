@@ -398,7 +398,7 @@ const contactLinks = [
   },
 ];
 
-const cvPath = "/cv/HugoHemlin-CV.pdf";
+const cvPath = "/cv/Hugo-Hemlin-CV.pdf";
 
 const structuredData = {
   "@context": "https://schema.org",
