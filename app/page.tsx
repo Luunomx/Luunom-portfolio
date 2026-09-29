@@ -256,15 +256,15 @@ const projectCases: ProjectCase[] = [
     ],
     diagrams: [
       {
-        title: "Research and paper-trading flow",
+        title: "System architecture overview",
         description:
-          "A sanitized view of Bot Control, paper and backtest modes, shared strategy execution, runtime evidence, and review outputs.",
-        src: "/projects/bot/research-flow.svg",
-        alt: "Sanitized flow diagram showing a private crypto trading bot workbench moving from Bot Control and configuration through paper, backtest, and replay modes into strategy routing, paper execution, runtime evidence, and research review outputs.",
+          "A paper-first view of the bot's control surface, research inputs, shared runtime, stored evidence, and human review boundary.",
+        src: "/projects/bot/system-architecture-overview.svg",
+        alt: "System architecture overview for a private crypto trading bot, showing Bot Control and CLI, run configuration, paper, backtest, ResearchRunner and replay inputs, shared strategy runtime, PostgreSQL evidence, and human research review. No live-capital path is shown.",
         caption:
           "Private repository · paper and research focused · no live-trading path by default",
-        width: 1500,
-        height: 1190,
+        width: 1800,
+        height: 1320,
       },
     ],
     accentBorder: "border-rose-400/60",

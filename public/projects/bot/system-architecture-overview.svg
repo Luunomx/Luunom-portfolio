@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Crypto trading bot — research and paper architecture</title>
+  <desc id="desc">A paper-first workbench with distinct paper, candle backtest, ResearchRunner, and event replay inputs. Shared strategy identity and runtime components feed PostgreSQL evidence and human review. The diagram shows no live-capital path.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09111f"/>
+      <stop offset="0.55" stop-color="#101c37"/>
+      <stop offset="1" stop-color="#17234d"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2865ee"/>
+      <stop offset="1" stop-color="#7538e9"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0" stop-color="#087f78"/>
+      <stop offset="1" stop-color="#078ea8"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0" stop-color="#b94b08"/>
+      <stop offset="1" stop-color="#e26008"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020713" flood-opacity="0.38"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="20" markerHeight="18" refX="18" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L19 9 L1 17 Z" fill="#91c5ff"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="20" markerHeight="18" refX="18" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L19 9 L1 17 Z" fill="#53e5f3"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="20" markerHeight="18" refX="18" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L19 9 L1 17 Z" fill="#ffd348"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f4f7ff; }
+      .title { font-size: 39px; font-weight: 780; letter-spacing: -0.8px; }
+      .subtitle { font-size: 20px; font-weight: 500; fill: #c2cde0; }
+      .section { font-size: 20px; font-weight: 800; letter-spacing: 2.2px; fill: #dce5f5; }
+      .card-title { font-size: 22px; font-weight: 760; }
+      .body { font-size: 17px; font-weight: 600; fill: #edf2fc; }
+      .muted { font-size: 15px; font-weight: 550; fill: #c3d0e5; }
+      .small { font-size: 14px; font-weight: 600; fill: #d7e2f4; }
+      .mode-label { font-size: 15px; font-weight: 800; letter-spacing: .5px; }
+      .mode-desc { font-size: 14px; font-weight: 600; fill: #d1dced; }
+      .arrow-label { font-size: 14px; font-weight: 700; fill: #e0e9f8; }
+      .rule { stroke: #73819d; stroke-opacity: .42; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1320" fill="url(#background)"/>
+  <circle cx="1580" cy="120" r="275" fill="#4148bd" opacity=".12"/>
+  <circle cx="145" cy="1175" r="340" fill="#087f91" opacity=".10"/>
+  <circle cx="1680" cy="1210" r="210" fill="#293f8b" opacity=".11"/>
+
+  <text x="90" y="84" class="title">Crypto trading bot — research and paper architecture</text>
+  <text x="92" y="121" class="subtitle">Crypto-focused today, with an adapter boundary for connecting other market-data feeds.</text>
+  <rect x="1408" y="55" width="304" height="48" rx="16" fill="#0c1728" stroke="#71809d" stroke-width="2"/>
+  <text x="1560" y="85" text-anchor="middle" class="small" style="letter-spacing:1.7px;fill:#99eff6">PRIVATE · PAPER / RESEARCH</text>
+
+  <text x="90" y="181" class="section">CONTROL &amp; INPUTS</text>
+  <line x1="90" y1="202" x2="1710" y2="202" class="rule"/>
+
+  <!-- Flow lines are drawn before cards so they remain behind the text. -->
+  <path d="M570 337 H655" fill="none" stroke="#91c5ff" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <text x="612" y="323" text-anchor="middle" class="arrow-label">configure</text>
+  <text x="490" y="462" text-anchor="middle" class="arrow-label">select run mode</text>
+  <path d="M912 445 V475 H70 V755 H88" fill="none" stroke="#53e5f3" stroke-width="3.5" marker-end="url(#arrow-cyan)"/>
+  <path d="M1495 445 C1495 493 1250 523 1155 566" fill="none" stroke="#91c5ff" stroke-width="3" stroke-dasharray="10 9" marker-end="url(#arrow-blue)"/>
+  <text x="1373" y="505" text-anchor="middle" class="arrow-label">mode-specific market input</text>
+
+  <rect x="90" y="228" width="480" height="217" rx="22" fill="url(#violet)" filter="url(#shadow)"/>
+  <text x="124" y="274" class="card-title">Bot Control + CLI</text>
+  <text x="124" y="312" class="body">Launch paper, backtest and research jobs</text>
+  <text x="124" y="343" class="body">Read run status, reports and diagnostics</text>
+  <text x="124" y="374" class="body">Bot Control allows one active paper run</text>
+  <text x="124" y="412" class="muted">Event replay is a CryptoBacktestHost / CLI mode</text>
+
+  <rect x="655" y="228" width="515" height="217" rx="22" fill="#303e56" stroke="#435371" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="690" y="274" class="card-title">Run configuration</text>
+  <text x="690" y="312" class="body">Profile + resolved risk and execution settings</text>
+  <text x="690" y="343" class="body">StrategyFactory + canonical strategy identity</text>
+  <text x="690" y="374" class="body">Explicit mode and effective configuration snapshot</text>
+  <text x="690" y="412" class="muted">Inputs and provenance are recorded per run</text>
+
+  <rect x="1250" y="228" width="460" height="217" rx="22" fill="#303e56" stroke="#435371" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1285" y="274" class="card-title">Public venues &amp; data feeds</text>
+  <text x="1285" y="312" class="body">Configure public venues as market-data sources</text>
+  <text x="1285" y="343" class="muted">Adapters normalize venue-specific feed details</text>
+  <text x="1285" y="374" class="body">Research uses both candle and tick history</text>
+  <text x="1285" y="412" class="muted">Captured events support parity replay</text>
+
+  <text x="90" y="548" class="section">RUN MODES SHARE STRATEGY CONTRACTS</text>
+  <line x1="90" y1="566" x2="1710" y2="566" class="rule"/>
+
+  <!-- Horizontal runtime flow. -->
+  <path d="M575 755 H620" fill="none" stroke="#53e5f3" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+  <text x="598" y="739" text-anchor="middle" class="arrow-label">feed</text>
+  <path d="M1245 755 H1290" fill="none" stroke="#53e5f3" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+  <text x="1267" y="739" text-anchor="middle" class="arrow-label">record</text>
+
+  <rect x="90" y="590" width="485" height="330" rx="22" fill="#10192b" stroke="#62728e" stroke-width="2"/>
+  <text x="124" y="632" class="card-title">Run modes</text>
+  <text x="124" y="657" class="muted">Different inputs and execution assumptions</text>
+
+  <rect x="124" y="674" width="417" height="42" rx="12" fill="url(#violet)"/>
+  <text x="146" y="693" class="mode-label">PAPER</text>
+  <text x="146" y="710" class="mode-desc">Configured public venue feeds; source semantics vary</text>
+
+  <rect x="124" y="721" width="417" height="42" rx="12" fill="#155b70"/>
+  <text x="146" y="740" class="mode-label">CANDLE BACKTEST</text>
+  <text x="146" y="757" class="mode-desc">Historical candles become synthetic OHLC events</text>
+
+  <rect x="124" y="768" width="417" height="42" rx="12" fill="#176c83"/>
+  <text x="146" y="787" class="mode-label">TICK BACKTEST</text>
+  <text x="146" y="804" class="mode-desc">Recorded individual trades as event-level input</text>
+
+  <rect x="124" y="815" width="417" height="42" rx="12" fill="#303e56"/>
+  <text x="146" y="834" class="mode-label">RESEARCHRUNNER</text>
+  <text x="146" y="851" class="mode-desc">Batch backtests with manifests and summary boards</text>
+
+  <rect x="124" y="862" width="417" height="42" rx="12" fill="#303e56"/>
+  <text x="146" y="881" class="mode-label">EVENT REPLAY</text>
+  <text x="146" y="898" class="mode-desc">Captured paper events for parity investigation</text>
+
+  <rect x="620" y="590" width="625" height="330" rx="22" fill="url(#teal)" filter="url(#shadow)"/>
+  <text x="655" y="632" class="card-title">Shared strategy + runtime components</text>
+
+  <rect x="655" y="653" width="555" height="52" rx="14" fill="#08786f" stroke="#36c8c1" stroke-opacity=".55"/>
+  <text x="679" y="675" class="body">1 · Normalize input identity</text>
+  <text x="679" y="695" class="muted">Source, timeframe, symbol and provenance</text>
+
+  <rect x="655" y="713" width="555" height="52" rx="14" fill="#08786f" stroke="#36c8c1" stroke-opacity=".55"/>
+  <text x="679" y="735" class="body">2 · Resolve the selected strategy</text>
+  <text x="679" y="755" class="muted">StrategyFactory + canonical identity</text>
+
+  <rect x="655" y="773" width="555" height="52" rx="14" fill="#08786f" stroke="#36c8c1" stroke-opacity=".55"/>
+  <text x="679" y="795" class="body">3 · Route only when a router or gate is selected</text>
+  <text x="679" y="815" class="muted">RegimeClassifier → specialist playbook</text>
+
+  <rect x="655" y="833" width="555" height="52" rx="14" fill="#08786f" stroke="#36c8c1" stroke-opacity=".55"/>
+  <text x="679" y="855" class="body">4 · Apply order/risk controls and exits</text>
+  <text x="679" y="875" class="muted">Strategy-owned lifecycle; fill assumptions vary by mode</text>
+  <text x="655" y="906" class="small">Candle backtests use synthetic OHLC prices; no exact paper parity is implied.</text>
+
+  <rect x="1290" y="590" width="420" height="330" rx="22" fill="#164f66" stroke="#53e5f3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1325" y="632" class="card-title">Evidence boundary</text>
+  <text x="1325" y="679" class="body">Trades, signals, orders and decisions</text>
+  <text x="1325" y="711" class="body">PostgreSQL typed runtime evidence</text>
+  <text x="1325" y="743" class="body">Configuration and provenance per run</text>
+  <text x="1325" y="775" class="body">CSV report export is optional</text>
+  <line x1="1325" y1="799" x2="1672" y2="799" stroke="#76cbd7" stroke-opacity=".5"/>
+  <text x="1325" y="831" class="muted">Dual-write has been retired</text>
+  <text x="1325" y="869" class="muted">Paper/research evidence is not live-trading proof</text>
+
+  <text x="90" y="977" class="section">READ MODEL &amp; HUMAN REVIEW</text>
+  <line x1="90" y1="997" x2="1710" y2="997" class="rule"/>
+
+  <path d="M570 1115 H655" fill="none" stroke="#91c5ff" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <path d="M1170 1115 H1250" fill="none" stroke="#ffd348" stroke-width="4" marker-end="url(#arrow-amber)"/>
+
+  <rect x="90" y="1020" width="480" height="190" rx="22" fill="#303e56" stroke="#435371" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="124" y="1063" class="card-title">Bot Control read model</text>
+  <text x="124" y="1102" class="body">Run status and report endpoints</text>
+  <text x="124" y="1133" class="body">Research replay catalog and selected-run view</text>
+  <text x="124" y="1174" class="muted">Jarvis reads through the loopback API</text>
+
+  <rect x="655" y="1020" width="515" height="190" rx="22" fill="#303e56" stroke="#435371" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="690" y="1063" class="card-title">Research review outputs</text>
+  <text x="690" y="1102" class="body">Backtest boards and paper session reviews</text>
+  <text x="690" y="1133" class="body">Diagnostics, data quality and provenance</text>
+  <text x="690" y="1174" class="muted">Evidence for a human decision</text>
+
+  <rect x="1250" y="1020" width="460" height="190" rx="22" fill="url(#amber)" filter="url(#shadow)"/>
+  <text x="1285" y="1063" class="card-title">Human decision boundary</text>
+  <text x="1285" y="1102" class="body">Review strategy, risk, fees and data</text>
+  <text x="1285" y="1133" class="body">No automatic promotion is implied</text>
+  <text x="1285" y="1174" class="muted">No live-capital path is shown</text>
+
+  <line x1="90" y1="1245" x2="136" y2="1245" stroke="#91c5ff" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <text x="145" y="1250" class="small">control / research flow</text>
+  <line x1="400" y1="1245" x2="446" y2="1245" stroke="#53e5f3" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+  <text x="455" y="1250" class="small">runtime / evidence flow</text>
+  <line x1="730" y1="1245" x2="776" y2="1245" stroke="#ffd348" stroke-width="4" marker-end="url(#arrow-amber)"/>
+  <text x="785" y="1250" class="small">human review boundary</text>
+  <text x="1710" y="1250" text-anchor="end" class="small">Paper / research workbench · no live-capital path shown</text>
+</svg>
